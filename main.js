@@ -6,6 +6,20 @@ jQuery(document).ready(function(){
         $("#divResumen").hide();
     }
     hideEverything();
+    var getLocalStorage = function(){
+        //get the local storage
+
+
+        //var jazDiezLs = localStorage.getItem("jazDiez");
+        //console.log('datos del local storage: '+ jazDiezLs);
+        //set the local storage
+        //document.getElementById("Jazmin10input").innerHTML = jazDiezLs;
+        //document.getElementById("Jazmin10input").value = String(jazDiezLs);
+        //var getlocal = localStorage.getItem("precios");
+        //parslocal = JSON.parse(getlocal)
+        //localStorage.setItem("precios", JSON.stringify(nuevovalor));
+    }
+    getLocalStorage();
 
     /*log in*/
     var loginData={username:'test',password:'shto33'}
@@ -23,12 +37,8 @@ jQuery(document).ready(function(){
             console.log('error: ',error);       
         }
     });
-
-   /*var inputDiezJazmin = document.getElementById("Jazmin10input").value;
-        var diezJazmin = localStorage.getItem("inputDiezJazmin");     
-        document.getElementById("Jazmin10input").innerHTML = inputDiezJazmin;*/
-
 });
+//variables globales
 var globalQuantity = 0;
 var globalTotalMoney = 0;
 var globalSubTotal = 0;
@@ -75,18 +85,35 @@ function plusClick(inputId,aroma,producId,idField,aromaId){
 
     
     jQuery.ajax({
-            url: 'http://www.productosnano.com/index.php?route=api/cart/add',
-            type: 'POST',
-            dataType:'json',
-            data: productApi,
-            success: function(data){
-                console.log('success aadding product to cart by input');
-                console.log(data);
-                getResume();
-            },
-            error: function(error){
-                console.log('error adding product by input: ',error);
-            }
+        url: 'http://www.productosnano.com/index.php?route=api/cart/add',
+        type: 'POST',
+        dataType:'json',
+        data: productApi,
+        success: function(data){
+            console.log('success aadding product to cart by input');
+            console.log(data);
+            getResume();
+            /*var jazDiezMl = document.getElementById("Jazmin10input").value;
+            localStorage.setItem("jazDiez", JSON.stringify(jazDiezMl));
+            var inputsAceites = $("#divAceites").map(function(){
+                    return $(this).val();
+                }).get();
+            console.log('inputs: ',inputsAceites);*/
+            var inputsAceites = document.getElementById("divAceites").getElementsByTagName("input").getAttribute('value');
+            console.log(inputsAceites);
+
+    
+
+
+
+         
+
+
+            //localStorage.setItem("inputsAceites", JSON.stringify(jazDiezMl));
+        },
+        error: function(error){
+            console.log('error adding product by input: ',error);
+        }
     });
 }
  
@@ -121,26 +148,67 @@ function minusClick(inputId,idField,productKey){
 }
 
 function getResume(){
+    tbobyMoney = document.querySelector('#tbl-resumen tbody');
+    tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
+    tbobyMoney.innerHTML="";
+    tbobyProducts.innerHTML="";
+    var totalproducts =0;
+
     jQuery.ajax({
             url:'http://www.productosnano.com/index.php?route=api/cart/products',
             type:'GET',
             dataType:'json',
             success: function(data){
                 console.log('success getting the info from the cart');
-                console.log(data);
+                //imprimir resultados en el modal 
                 globalSubTotal = (data.totals[0].text);
                 globalImpuesto = (data.totals[1].text);
                 globalTotalMoney = (data.totals[2].text);
                 document.getElementById("price").innerHTML = globalTotalMoney;
+                //llenar las tablas del resumen.
+                data.totals.map(function(total){    
+                    console.log('MAP DE LISTA DE RESUMEN');
+                    var fila = document.createElement('tr');
+                    var celdaDetalle = document.createElement('td');
+                    var celdaMonto = document.createElement('td');
+
+                    var nodoTxtDetalle = document.createTextNode(total.title);
+                    var nodoTxtMonto = document.createTextNode(total.text);
+
+                    $(celdaDetalle).append(nodoTxtDetalle);
+                    $(fila).append(celdaDetalle);
+
+                    $(celdaMonto).append(nodoTxtMonto);
+                    $(fila).append(celdaMonto);
+                    $(tbobyMoney).append(fila);
+                });
 
                 //console.log('total de dinero a pagar: '+ globalTotalMoney);
                 //total de productos
-                var totalproducts =0;
+               
                 data.products.map(function(product){
-                    //imprimir el producto console.log(product);
-                    console.log('nombre de producto:',product.name);
-                    console.log('cantidad de producto: ',product.quantity);
-                    console.log("-----------");
+                    console.log('MAP DE PRODUCTOS');
+                    console.log(product);
+                    var fila = document.createElement('tr');
+                    var celdaProduct = document.createElement('td');
+                    var celdaQuantity = document.createElement('td');
+                    var celdaPrice = document.createElement('td');
+
+                    var nodoTxtProduct = document.createTextNode(product.name);
+                    var nodoTxtQuantity = document.createTextNode(product.quantity);
+                    var nodoTxtPrice = document.createTextNode(product.price);
+
+                    $(celdaProduct).append(nodoTxtProduct);
+                    $(fila).append(celdaProduct);
+
+                    $(celdaQuantity).append(nodoTxtQuantity);
+                    $(fila).append(celdaQuantity);
+
+                    $(celdaPrice).append(nodoTxtPrice);
+                    $(fila).append(celdaPrice);
+
+                    $(tbobyProducts).append(fila);
+
                     totalproducts += parseInt(product.quantity);
                 });
                 globalQuantity = totalproducts;
@@ -151,14 +219,10 @@ function getResume(){
                console.log('error getting the info from the cart ',error);
             }
         }); 
-        return globalQuantity;
-        return globalTotalMoney; 
+    return globalQuantity;
+    return globalTotalMoney; 
 }    
 
-
-
-/*document.write(globalQuantity);
-document.write(globalTotalMoney);*/
 
 $("#next-aceites").click(function(){
     hideEverythingTwice();
@@ -196,8 +260,8 @@ $("#back-resumen").click(function(){
     $( "#divDifusores" ).show();
 }); 
 
-//pendiente: local storage, botones fuera del scroll, resumen, precio y cantidad de productos.
-//hecho: cantidad en boton de carrito. Precio. 
+//pendiente: local storage, botones fuera del scroll.
+//hecho: cantidad en boton de carrito. Precio. resumen tabla 1 y 2.
 //urge: localstorage por cada click de mas o menos.
 
 
