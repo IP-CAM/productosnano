@@ -11,21 +11,20 @@ jQuery(document).ready(function(){
     }
     hideEverything();
     var getLocalStorage = function(){
-        /*get the local storage
-        var newAceitesValues = localStorage.getItem("divAceitesLocalStorage");
-        console.log('valores traidos de local storage: '+ newAceitesValues);
+        //show the local storage in the inputs
+        
 
-        show the local storage in the inputs
-        var divAceitesArray = $('input[value="0"]').map(function(){
-             return this.value;
-        }).get();*/
-        var newArrayValues = localStorage.getItem("InputsValues");
-      
-       
-        
-        
+        var storageData = JSON.parse(localStorage.getItem("InputsValues"));
+        console.log('datos traidos del local storage: ',storageData); 
+        if(storageData){
+            storageData.map(function(field){
+            document.getElementById(field.idField).value = field.value;
+
+
+        });
+        }   
     }
-    //getLocalStorage();
+    getLocalStorage();
     var loginData={username:'test',password:'shto33'}
 
    jQuery.ajax({
@@ -34,8 +33,8 @@ jQuery(document).ready(function(){
         dataType:'json',
         data: loginData,
         success: function(data){
-            console.log('success');
-            console.log(data);  
+            //console.log('success');
+            //console.log(data);  
         },
         error: function(error){
             console.log('error: ',error);       
@@ -43,7 +42,7 @@ jQuery(document).ready(function(){
     });
 });
 /** 
- * @type {Number}
+ * @type {number}
  */
 var globalQuantity = 0;
 var globalTotalMoney = 0;
@@ -93,20 +92,20 @@ var decrementInput = function(idField){
  * @param  {[id]} aromaId  
  * @return {[none]}
  */
-function plusClick(inputId,aroma,producId,idField,aromaId){
-    incrementInput(idField);
+function plusClick(inputId,aroma,producId,currentField,aromaId){
+    incrementInput(currentField);
     console.log('inputId: ',inputId);
-    console.log('cantidad producto: ',document.getElementById(idField).value);
+    console.log('cantidad producto: ',document.getElementById(currentField).value);
 
     var productData=`{
         "product_id":"`+producId+`",
         "quantity": "1",
         "option[`+aromaId+`]":"`+aroma+`"
     }`;
-    var productLsObject=`{
-        "idField":"`+idField+`",
-        "value": "`+document.getElementById(idField).value+`"
-    }`;
+    var productLsObject={
+        idField:currentField,
+        value: document.getElementById(currentField).value
+    };
     //data api
     console.log(productData);
     productApi = JSON.parse(productData);
@@ -119,21 +118,39 @@ function plusClick(inputId,aroma,producId,idField,aromaId){
         dataType:'json',
         data: productApi,
         success: function(data){
-            console.log('success aadding product to cart by input');
-            console.log(data);
+            console.log('success adding product to cart by input');
+            //console.log(data);
             getResume();
-            dataLocalStorage.push(productLsObject);
-            //console.log('array para local storage: ' + dataLocalStorage);
-            //set the local storage
-            localStorage.setItem("InputsValues",(dataLocalStorage));
+            var indexFound=productExist(currentField);
+            console.log('$#$#$# ',indexFound);
+            if(indexFound == -1){
+                 dataLocalStorage.push(productLsObject);
+                 console.log('agrego');
+            }else{
+                dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
+                console.log('actualizo');
+            }
 
+
+            
+            localStorage.setItem("InputsValues",JSON.stringify(dataLocalStorage));
         },
         error: function(error){
             console.log('error adding product by input: ',error);
         }
     });
 }
- 
+
+function productExist(currentField){
+    var indexField = -1;
+    dataLocalStorage.map(function(arrayfield,i){
+        if(arrayfield.idField === currentField){
+            console.log('entro si es igual');
+            indexField = i;
+        }
+    }); 
+    return indexField;
+ }
 /**
  * [minusClick everytime you click the - btn get the values to do a post request to the api and edit the local storage]
  * @param  {[id]} inputId    [id from the input field]
@@ -142,8 +159,8 @@ function plusClick(inputId,aroma,producId,idField,aromaId){
  */
 function minusClick(inputId,idField,productKey){
     decrementInput(idField);
-    console.log('inputId: ',inputId);
-    console.log('cantidad producto para editar: ',document.getElementById(idField).value);
+    //console.log('inputId: ',inputId);
+    //console.log('cantidad producto para editar: ',document.getElementById(idField).value);
 
     var productDataForEdit=`{
             "key":"`+productKey+`",
@@ -151,7 +168,7 @@ function minusClick(inputId,idField,productKey){
         }`;
 
     productEdit = JSON.parse(productDataForEdit);
-    console.log(productEdit);
+    //console.log(productEdit);
 
     jQuery.ajax({
             url: 'http://www.productosnano.com/index.php?route=api/cart/edit',
@@ -160,7 +177,7 @@ function minusClick(inputId,idField,productKey){
             data: productEdit,
             success: function(data){
                 console.log('success editing the cart ');
-                console.log(data);
+                //console.log(data);
                 getResume();
             },
             error: function(error){
@@ -237,7 +254,7 @@ function getResume(){
                     totalproducts += parseInt(product.quantity);
                 });
                 globalQuantity = totalproducts;
-                console.log("Total de productos en el carrito: ",globalQuantity);
+                //console.log("Total de productos en el carrito: ",globalQuantity);
                 document.getElementById("badge").innerHTML = globalQuantity;
             },
             error: function(error){
