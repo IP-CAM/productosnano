@@ -10,21 +10,8 @@ jQuery(document).ready(function(){
         $("#divResumen").hide();
     }
     hideEverything();
-    var getLocalStorage = function(){
-        //show the local storage in the inputs
-        
-
-        var storageData = JSON.parse(localStorage.getItem("InputsValues"));
-        console.log('datos traidos del local storage: ',storageData); 
-        if(storageData){
-            storageData.map(function(field){
-            document.getElementById(field.idField).value = field.value;
-
-
-        });
-        }   
-    }
-    getLocalStorage();
+    
+    
     var loginData={username:'test',password:'shto33'}
 
    jQuery.ajax({
@@ -49,6 +36,22 @@ var globalTotalMoney = 0;
 var globalSubTotal = 0;
 var globalImpuesto = 0;
 var dataLocalStorage = [];
+
+var getLocalStorage = function(){
+    //show the local storage in the inputs
+    var storageData = JSON.parse(localStorage.getItem("InputsValues"));
+    console.log('datos traidos del local storage: ',storageData); 
+    if(storageData){
+        storageData.map(function(field){
+            document.getElementById(field.idField).value = field.value;
+        });
+    } 
+    var storageQuantity = localStorage.getItem("QuantityProduct");
+    document.getElementById("badge").innerHTML = storageQuantity;
+    var storageTotalPrice = localStorage.getItem("totalPrice");
+    document.getElementById("price").innerHTML = storageTotalPrice;
+}
+
 
 
 /**
@@ -94,8 +97,8 @@ var decrementInput = function(idField){
  */
 function plusClick(inputId,aroma,producId,currentField,aromaId){
     incrementInput(currentField);
-    console.log('inputId: ',inputId);
-    console.log('cantidad producto: ',document.getElementById(currentField).value);
+    //console.log('inputId: ',inputId);
+    //console.log('cantidad producto: ',document.getElementById(currentField).value);
 
     var productData=`{
         "product_id":"`+producId+`",
@@ -106,8 +109,8 @@ function plusClick(inputId,aroma,producId,currentField,aromaId){
         idField:currentField,
         value: document.getElementById(currentField).value
     };
-    //data api
-    console.log(productData);
+    
+    //console.log(productData);
     productApi = JSON.parse(productData);
     //data local storage
     console.log('data local storage: ',productLsObject);
@@ -118,21 +121,17 @@ function plusClick(inputId,aroma,producId,currentField,aromaId){
         dataType:'json',
         data: productApi,
         success: function(data){
-            console.log('success adding product to cart by input');
-            //console.log(data);
+            //console.log('success adding product to cart by input');
             getResume();
             var indexFound=productExist(currentField);
-            console.log('$#$#$# ',indexFound);
+            //console.log('$#$#$# ',indexFound);
             if(indexFound == -1){
                  dataLocalStorage.push(productLsObject);
-                 console.log('agrego');
+                 console.log('agrego btn mas');
             }else{
                 dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
-                console.log('actualizo');
+                console.log('actualizo btn mas');
             }
-
-
-            
             localStorage.setItem("InputsValues",JSON.stringify(dataLocalStorage));
         },
         error: function(error){
@@ -145,7 +144,7 @@ function productExist(currentField){
     var indexField = -1;
     dataLocalStorage.map(function(arrayfield,i){
         if(arrayfield.idField === currentField){
-            console.log('entro si es igual');
+            //console.log('entro si es igual');
             indexField = i;
         }
     }); 
@@ -157,15 +156,21 @@ function productExist(currentField){
  * @param  {[id]} idField    
  * @param  {[string]} productKey [key from the product for edit the cart]
  */
-function minusClick(inputId,idField,productKey){
-    decrementInput(idField);
+function minusClick(inputId,currentField,productKey){
+    decrementInput(currentField);
     //console.log('inputId: ',inputId);
     //console.log('cantidad producto para editar: ',document.getElementById(idField).value);
 
     var productDataForEdit=`{
             "key":"`+productKey+`",
-            "quantity": "`+document.getElementById(idField).value+`"
+            "quantity": "`+document.getElementById(currentField).value+`"
         }`;
+
+    var newDataProduct={
+        idField:currentField, //key product
+        value: document.getElementById(currentField).value
+    };
+    console.log('update data local storage: ',newDataProduct);
 
     productEdit = JSON.parse(productDataForEdit);
     //console.log(productEdit);
@@ -176,9 +181,18 @@ function minusClick(inputId,idField,productKey){
             dataType:'json',
             data: productEdit,
             success: function(data){
-                console.log('success editing the cart ');
-                //console.log(data);
+                console.log(data);
                 getResume();
+                var indexFound=productExist(currentField);
+                    console.log(' UPDATE ',indexFound);
+                    if(indexFound == -1){
+                        dataLocalStorage.push(newDataProduct);
+                        console.log('agrego en el btn menos');
+                    }else{
+                        dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
+                        console.log('actualizo en el btn menos');
+                    }
+                localStorage.setItem("InputsValues",JSON.stringify(dataLocalStorage));
             },
             error: function(error){
                 console.log('error editing the cart: ',error);
@@ -206,10 +220,11 @@ function getResume(){
                 globalSubTotal = (data.totals[0].text);
                 globalImpuesto = (data.totals[1].text);
                 globalTotalMoney = (data.totals[2].text);
+                localStorage.setItem("totalPrice",globalTotalMoney);
                 document.getElementById("price").innerHTML = globalTotalMoney;
                 //llenar las tablas del resumen.
                 data.totals.map(function(total){    
-                    console.log('MAP DE LISTA DE RESUMEN');
+                    //console.log('MAP DE LISTA DE RESUMEN');
                     var fila = document.createElement('tr');
                     var celdaDetalle = document.createElement('td');
                     var celdaMonto = document.createElement('td');
@@ -229,8 +244,8 @@ function getResume(){
                 //total de productos
                
                 data.products.map(function(product){
-                    console.log('MAP DE PRODUCTOS');
-                    console.log(product);
+                    //console.log('MAP DE PRODUCTOS');
+                    //console.log(product);
                     var fila = document.createElement('tr');
                     var celdaProduct = document.createElement('td');
                     var celdaQuantity = document.createElement('td');
@@ -255,6 +270,7 @@ function getResume(){
                 });
                 globalQuantity = totalproducts;
                 //console.log("Total de productos en el carrito: ",globalQuantity);
+                localStorage.setItem("QuantityProduct",globalQuantity);
                 document.getElementById("badge").innerHTML = globalQuantity;
             },
             error: function(error){
@@ -264,6 +280,10 @@ function getResume(){
     return globalQuantity;
     return globalTotalMoney; 
 }    
+
+
+
+getLocalStorage();
 
 /**
  * [this ones hide and show for the siguiente and atras buttons]
