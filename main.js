@@ -46,10 +46,19 @@ var getLocalStorage = function(){
             document.getElementById(field.idField).value = field.value;
         });
     } 
+
     var storageQuantity = localStorage.getItem("QuantityProduct");
     document.getElementById("badge").innerHTML = storageQuantity;
+    document.getElementById("badge-tablets").innerHTML = storageQuantity;
+    document.getElementById("badge-aerosoles").innerHTML = storageQuantity;
+    document.getElementById("badge-dif").innerHTML = storageQuantity;
+    document.getElementById("badge-res").innerHTML = storageQuantity;
     var storageTotalPrice = localStorage.getItem("totalPrice");
     document.getElementById("price").innerHTML = storageTotalPrice;
+    document.getElementById("price-tablets").innerHTML = storageTotalPrice;
+    document.getElementById("price-aerosoles").innerHTML = storageTotalPrice;
+    document.getElementById("price-dif").innerHTML = storageTotalPrice;
+    document.getElementById("price-res").innerHTML = storageTotalPrice;
 }
 
 
@@ -95,7 +104,7 @@ var decrementInput = function(idField){
  * @param  {[id]} aromaId  
  * @return {[none]}
  */
-function plusClick(inputId,aroma,producId,currentField,aromaId){
+function plusClick(inputId,aroma,producId,currentField,aromaId,aromaT,idAromaT){
     incrementInput(currentField);
     //console.log('inputId: ',inputId);
     //console.log('cantidad producto: ',document.getElementById(currentField).value);
@@ -103,7 +112,8 @@ function plusClick(inputId,aroma,producId,currentField,aromaId){
     var productData=`{
         "product_id":"`+producId+`",
         "quantity": "1",
-        "option[`+aromaId+`]":"`+aroma+`"
+        "option[`+aromaId+`]":"`+aroma+`",
+        "option[`+idAromaT+`]":"`+aromaT+`"
     }`;
     var productLsObject={
         idField:currentField,
@@ -122,6 +132,7 @@ function plusClick(inputId,aroma,producId,currentField,aromaId){
         data: productApi,
         success: function(data){
             //console.log('success adding product to cart by input');
+            console.log(data);
             getResume();
             var indexFound=productExist(currentField);
             //console.log('$#$#$# ',indexFound);
@@ -221,7 +232,13 @@ function getResume(){
                 globalImpuesto = (data.totals[1].text);
                 globalTotalMoney = (data.totals[2].text);
                 localStorage.setItem("totalPrice",globalTotalMoney);
+                console.log(globalTotalMoney);
+                console.log(data);
                 document.getElementById("price").innerHTML = globalTotalMoney;
+                document.getElementById("price-tablets").innerHTML = globalTotalMoney;
+                document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
+                document.getElementById("price-dif").innerHTML = globalTotalMoney;
+                document.getElementById("price-res").innerHTML = globalTotalMoney;
                 //llenar las tablas del resumen.
                 data.totals.map(function(total){    
                     //console.log('MAP DE LISTA DE RESUMEN');
@@ -272,6 +289,10 @@ function getResume(){
                 //console.log("Total de productos en el carrito: ",globalQuantity);
                 localStorage.setItem("QuantityProduct",globalQuantity);
                 document.getElementById("badge").innerHTML = globalQuantity;
+                document.getElementById("badge-tablets").innerHTML = globalQuantity;
+                document.getElementById("badge-aerosoles").innerHTML = globalQuantity;
+                document.getElementById("badge-dif").innerHTML = globalQuantity;
+                document.getElementById("badge-res").innerHTML = globalQuantity;
             },
             error: function(error){
                console.log('error getting the info from the cart ',error);
