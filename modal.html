@@ -6,8 +6,7 @@
                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type=
                "button"><span aria-hidden="true">×</span></button> <img class="pull-left" src=
                "http://nano.lionix.website/image/logo01v2.png"> <span class="titulo2">Aceites Nano</span>
-
-               <div class="pull-right carritoCompras">
+                  <div class="pull-right carritoCompras">
                   <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge"></span></button>
                </div>
                <div class="pull-right carritoCompras">
@@ -16,12 +15,11 @@
                      <span class="badge" id="price"></span></button>
                </div> 
             </div>
-            <div>
-               <i style="color: #BFCC89;font-size: 30px;left: 529px;top25px;cursor:pointer;" class="fa fa-arrow-circle-right" id="next-aceites" aria-hidden="true"></i>
-            </div>
-            
-            
             <div class="modal-body" id='tblAceites'>
+               <div>
+                  <button class="btn btn-primary pull-right" id="next-aceites" type="button">Siguiente</button>
+               </div>
+               <div style="margin-top: 50px;"></div>
                <table class="table table-bordered table-hover">
                   <thead>
                      <tr>
@@ -36,14 +34,13 @@
                         </th>
                      </tr>
                   </thead>
-
                   <tbody>
                      <tr>
                         <th scope="row">Jazmin</th>
                         <td>                              
                            <button value="-" class="qtyminus btn btn-default" field="Jazmin10" type="button" onclick="minusClick('Jazmin10','Jazmin10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjU3O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ2O3M6NDoiMTM0MyI7fX0=')"> - </button>      
                            <input name="Jazmin10" value="0" class="qty" type="text" id="Jazmin10input">
-                           <button value="+"  class="qtyplus btn btn-default" field="Jazmin10" id='incrementBtn' onclick="plusClick('Jazmin10','1343','57','Jazmin10input','546','','')" > + </button>                            
+                           <button value="+"  class=" btn btn-default" field="Jazmin10" id='incrementBtn' onclick="plusClick('Jazmin10','1343','57','Jazmin10input','546','','')" > + </button>                            
                         </td>
                         <td>                              
                            <button value="-" class="qtyminus btn btn-default" field="Jazmin65" type="button" onclick="minusClick('Jazmin65','Jazmin65input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTUyMyI7fX0=')"> - </button>
@@ -51,8 +48,7 @@
                            <button value="+" class="qtyplus btn btn-default" field="Jazmin65" type="button" onclick="plusClick('Jazmin65','1523','69','Jazmin65input','549','','')"> + </button>                           
                         </td>
                      </tr>
-
-
+               
                      <tr>
                         <th scope="row">Floral</th>
                         <td>                              
@@ -707,10 +703,11 @@
                            <input name="Toronja65" value="0" class="qty" type="text" id="Toronja65input">
                            <button value="+" class="qtyplus btn btn-default" field="Toronja65" type="button" onclick="plusClick('Toronja65','1561','69','Toronja65input','549')">  + </button>
                         </td>
-                     </tr>
-
+                     </tr> 
                   </tbody>
-               </table>        
+               </table> 
+                  <button class="btn btn-primary pull-right" id="down-next-aceites" type="button">Siguiente</button>
+               <div style="margin-top: 50px;"></div>       
             </div>
             <br>
             <br>
@@ -731,14 +728,12 @@
                      <span class="badge" id="price-tablets"></span></button>
                </div>
             </div>
-            <div>
-               <i style="color: #BFCC89;font-size: 30px;left: 529px;top25px;cursor:pointer;" class="fa fa-arrow-circle-right" id="next-tabletas" aria-hidden="true"></i>
-            </div>
-            <div>
-               <i style="color: #BFCC89;font-size: 30px;top: -28px;left: 35px;cursor:pointer;" class="fa fa-arrow-circle-left" id="back-tabletas" aria-hidden="true"></i>
-            </div>
-
             <div class="modal-body">
+               <div>
+                  <button class="btn btn-primary pull-right"id="next-tabletas" type="button">Siguiente</button>
+                  <button class="btn btn-primary pull-left" id="back-tabletas" type="button">Atrás</button>
+               </div>
+               <div style="margin-top: 50px;"></div>   
                <table class="table table-bordered table-hover">
                   <thead>
                      <tr>
@@ -785,7 +780,7 @@
                      <button value="+" class="qtyplus btn btn-default" field="Bouquet65" type="button">  + </button>                         
                   </td>
                </tr>
-               <tr><!--(inputId,aroma,producId,currentField,aromaId,aromaT,idAromaT)-->
+               <tr>
                   <th scope="row">Coco</th>
                   <td>                              
                      <button value="-" class="qtyminus btn btn-default" field="CocotT10" type="button" onclick="minusClick('CocotT10','CocotT10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NjtzOjQ6IjE1NzUiO2k6NTU3O3M6NDoiMTU3NyI7fX0=')">   - </button>                           
@@ -891,10 +886,9 @@
                </tr>
             </tbody>
                </table>
-               <!-- 
-               <button class="btn btn-primary pull-right"id="next-tabletas" type="button">Siguiente</button>
-                <button class="btn btn-primary pull-left" id="back-tabletas" type="button">Atrás</button>-->
-               <br>
+                  <button class="btn btn-primary pull-right"id="down-next-tabletas" type="button">Siguiente</button>
+                  <button class="btn btn-primary pull-left" id="down-back-tabletas" type="button">Atrás</button>
+               <br> 
             </div>
          </div>
          <!-- _____________ -->
@@ -903,7 +897,7 @@
             <div class="modal-header text-center">
                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type=
                "button"><span aria-hidden="true">×</span></button> <img class="pull-left" src=
-               "http://nano.lionix.website/image/logo01v2.png"> <span class="titulo2">Aerosoles Nano</span>
+               "http://nano.lionix.website/image/logo01v2.png"> <span class="titulo2">Desodorantes ambientales Nano</span>
                <div class="pull-right carritoCompras">
                   <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge-aerosoles"></span></button>
                </div>
@@ -913,15 +907,12 @@
                      <span class="badge" id="price-aerosoles"></span></button>
                </div>
             </div>
-               <div>
-                  <i style="color: #BFCC89;font-size: 30px;left: 534px;top: 0px;cursor:pointer;" class="fa fa-arrow-circle-right" id="next-aerosoles" aria-hidden="true"></i>
-               </div>
-               <div>
-                  <i style="color: #BFCC89;font-size: 30px;top: -30px;left: 35px;cursor:pointer;" class="fa fa-arrow-circle-left" id="back-aerosoles" aria-hidden="true"></i>
-               </div>
-            
-
             <div class="modal-body">
+               <div>
+                  <button class="btn btn-primary pull-right"id="next-aerosoles" type="button">Siguiente</button>
+                  <button class="btn btn-primary pull-left" id="back-aerosoles" type="button">Atrás</button>
+               </div>
+               <div style="margin-top: 50px;"></div>   
                <table class="table table-bordered table-hover">
                   <thead>
                      <tr>
@@ -1122,9 +1113,11 @@
                      </tr>
                   </tbody>
                </table>
-               <!-- 
-               <button class="btn btn-primary pull-right" id="next-aerosoles" type="button">Siguiente</button>
-               <button class="btn btn-primary pull-left" id="back-aerosoles" type="button">Atrás</button><br>-->
+               <div style="margin-top: 50px;"></div>  
+                <div>
+                  <button class="btn btn-primary pull-right"id="down-next-aerosoles" type="button">Siguiente</button>
+                  <button class="btn btn-primary pull-left" id="down-back-aerosoles" type="button">Atrás</button>
+               </div> 
                <br>
             </div>
          </div>
@@ -1143,32 +1136,49 @@
                      <i aria-hidden="true" class="fa fa-credit-card"></i> 
                      <span class="badge" id="price-dif"></span></button>
                </div>
-               <div>
-                  <i style="color: #BFCC89;font-size: 30px;left: 250px;top: 20px;cursor:pointer;" class="fa fa-arrow-circle-right" id="next-difusores" aria-hidden="true"></i>
-               </div>
-               <div>
-                  <i style="color: #BFCC89;font-size: 30px;top: -10px;left: -250px;cursor:pointer;" class="fa fa-arrow-circle-left" id="back-difusores" aria-hidden="true"></i>
-               </div>
             </div>
 
             <div class="modal-body">
                <table class="table table-bordered table-hover">
-
+                  <div>
+                     <button class="btn btn-primary pull-right"id="next-difusores" type="button">Siguiente</button>
+                     <button class="btn btn-primary pull-left" id="back-difusores" type="button">Atrás</button>
+                  </div> 
+                  <div style="margin-top: 50px;"></div>  
                   <tbody>
                      <tr>
-                        <th scope="row">Difusores Ultrasonido</th>
+                        <th scope="row">Difusor eléctrico por ultrasonido</th>
                          <td> 
-                        <button value="-" class="qtyminus btn btn-default" field="Ultrasonido" type="button" onclick="minusClick('Ultrasonido','Ultrasonidoinput','YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3Nzt9')"> - </button>  
-                        <input name="Ultrasonido" value="0" class="qty" type="text" id="Ultrasonidoinput"> 
-                        <button value="+" class="qtyplus btn btn-default" field="Ultrasonido" id='incrementBtn'  onclick="plusClick('Ultrasonido','','277','Ultrasonidoinput','','','')">  + </button>                         
+                        <button value="-" class="qtyminus btn btn-default" field="UltrasonidoElectrico" type="button" onclick="minusClick('UltrasonidoElectrico','UltrasonidoElectricoinput','YToxOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3Nzt9')"> - </button>  
+                        <input name="UltrasonidoElectrico" value="0" class="qty" type="text" id="UltrasonidoElectricoinput"> 
+                        <button value="+" class="qtyplus btn btn-default" field="UltrasonidoElectrico" id='incrementBtn'  onclick="plusClick('UltrasonidoElectrico','','277','UltrasonidoElectricoinput','','','')">  + </button>                         
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <th scope="row">Difusor Sachet</th>
+                         <td> 
+                        <button value="-" class="qtyminus btn btn-default" field="UltrasonidoSachet" type="button" onclick="minusClick('UltrasonidoSachet','UltrasonidoSachetinput','')"> - </button>  
+                        <input name="UltrasonidoSachet" value="0" class="qty" type="text" id="UltrasonidoSachetinput"> 
+                        <button value="+" class="qtyplus btn btn-default" field="UltrasonidoSachet" id='incrementBtn'  onclick="plusClick('UltrasonidoSachet','','','UltrasonidoSachetinput','','','')">  + </button>                         
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <th scope="row">Difusor artesanal</th>
+                         <td> 
+                        <button value="-" class="qtyminus btn btn-default" field="UltrasonidoArtesanal" type="button" onclick="minusClick('UltrasonidoArtesanal','UltrasonidoArtesanalinput','')"> - </button>  
+                        <input name="UltrasonidoArtesanal" value="0" class="qty" type="text" id="UltrasonidoArtesanalinput"> 
+                        <button value="+" class="qtyplus btn btn-default" field="UltrasonidoArtesanal" id='incrementBtn'  onclick="plusClick('UltrasonidoArtesanal','','','UltrasonidoArtesanalinput','','','')">  + </button>                         
                         </td>
                      </tr>
                   </tbody>
                </table>
-               <!-- 
-               <button class="btn btn-primary pull-right" id="next-difusores" type="button">Siguiente</button>
-               <button class="btn btn-primary pull-left" id="back-difusores" type="button">Atrás</button><br>-->
-
+               <div style="margin-top: 50px;"></div>  
+                <div>
+                     <button class="btn btn-primary pull-right" id="down-next-difusores" type="button">Siguiente</button>
+                     <button class="btn btn-primary pull-left" id="down-back-difusores" type="button">Atrás</button>
+                  </div> 
                <br>
             </div>
          </div>
@@ -1196,26 +1206,20 @@
                      <tbody></tbody>
                   </table>
                </div>
-               
-            
-
                <div class="row">
-                  <div class="col-md-3">
-                  </div>
-
+                  <div class="col-md-3"></div>
                   <div class="col-md-6" id="tbl-resumen">
                      <table class="table table-hover">
                         <tbody></tbody>
                      </table>
                   </div>
-
-                 
                </div>
 
                <div class="text-center">
                   <span><a class="btn btn-primary" href=
                   "http://www.productosnano.com/index.php?route=checkout/cart" id="resumen">Hacer
-                  Pedido</a></span>
+                  Pedido</a></span> 
+                  <div style="margin-top: 50px;"></div>  
                   <button class="btn btn-primary pull-left" id="back-resumen" type="button">Atrás</button><br>
                </div>
             </div>

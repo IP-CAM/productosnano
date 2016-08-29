@@ -313,7 +313,7 @@ function compareData(){
         tbobyMoney = document.querySelector('#tbl-resumen tbody');
         tbobyProducts.innerHTML="";
         tbobyProducts.innerHTML="";
-        console.log('Hidden del modal se activo');
+        //console.log('Hidden del modal se activo');
         
         jQuery.ajax({
             url:'http://www.productosnano.com/index.php?route=api/cart/products',
@@ -443,7 +443,9 @@ compareData();
 
 /**
  * [this ones hide and show for the siguiente and atras buttons]
- */
+ *
+ *top buttons*/
+
 $("#next-aceites").click(function(){
     hideEverythingTwice();
     $("#divTabletas").show();
@@ -460,6 +462,7 @@ $("#next-difusores").click(function(){
     hideEverythingTwice();
     $( "#divResumen" ).show();
 });
+
 $("#back-tabletas").click(function(){
     hideEverythingTwice();
     $( "#divAceites" ).show();
@@ -477,6 +480,36 @@ $("#back-resumen").click(function(){
     $( "#divDifusores" ).show();
 }); 
 
+//bottom buttons
+$("#down-next-aceites").click(function(){
+    hideEverythingTwice();
+    $("#divTabletas").show();
+});
+$("#down-next-tabletas").click(function(){
+    hideEverythingTwice();
+    $( "#divAerosoles" ).show();
+});
+$("#down-next-aerosoles").click(function(){
+    hideEverythingTwice();
+    $( "#divDifusores" ).show();
+});
+$("#down-next-difusores").click(function(){
+    hideEverythingTwice();
+    $( "#divResumen" ).show();
+});
+
+$("#down-back-tabletas").click(function(){
+    hideEverythingTwice();
+    $( "#divAceites" ).show();
+});
+$("#down-back-aerosoles").click(function(){
+    hideEverythingTwice();
+    $( "#divTabletas" ).show();
+});
+$("#down-back-difusores").click(function(){
+    hideEverythingTwice();
+    $("#divAerosoles" ).show();
+});
 
 
 
