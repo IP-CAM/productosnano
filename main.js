@@ -6,8 +6,12 @@ jQuery(document).ready(function(){
     var hideEverything = function(){
         $("#divTabletas").hide();
         $("#divAerosoles").hide();
+        $("#divSachet").hide();
         $("#divDifusores").hide();
         $("#divResumen").hide();
+
+
+        console.log('lol');
     }
     hideEverything();
     
@@ -73,6 +77,7 @@ var hideEverythingTwice=function(){
     $("#divTabletas").hide();
     $("#divAerosoles").hide();
     $("#divDifusores").hide();
+    $("#divSachet").hide();
     $("#divAceites").hide();
     $("#divResumen").hide();
 }
@@ -443,7 +448,8 @@ compareData();
 
 /**
  * [this ones hide and show for the siguiente and atras buttons]
- *
+ *aceites, tabletas, aerosoles, sachets, difusores, resumen.
+ *resumen, dif, sac, aerosoles, tablet, aceites.
  *top buttons*/
 
 $("#next-aceites").click(function(){
@@ -456,30 +462,16 @@ $("#next-tabletas").click(function(){
 });
 $("#next-aerosoles").click(function(){
     hideEverythingTwice();
+    $( "#divSachet" ).show();
+});
+$("#next-sachet").click(function(){
+    hideEverythingTwice();
     $( "#divDifusores" ).show();
 });
 $("#next-difusores").click(function(){
     hideEverythingTwice();
     $( "#divResumen" ).show();
 });
-
-$("#back-tabletas").click(function(){
-    hideEverythingTwice();
-    $( "#divAceites" ).show();
-});
-$("#back-aerosoles").click(function(){
-    hideEverythingTwice();
-    $( "#divTabletas" ).show();
-});
-$("#back-difusores").click(function(){
-    hideEverythingTwice();
-    $("#divAerosoles" ).show();
-});
-$("#back-resumen").click(function(){
-   hideEverythingTwice();
-    $( "#divDifusores" ).show();
-}); 
-
 //bottom buttons
 $("#down-next-aceites").click(function(){
     hideEverythingTwice();
@@ -491,6 +483,10 @@ $("#down-next-tabletas").click(function(){
 });
 $("#down-next-aerosoles").click(function(){
     hideEverythingTwice();
+    $( "#divSachet" ).show();
+});
+$("#down-next-sachet").click(function(){
+    hideEverythingTwice();
     $( "#divDifusores" ).show();
 });
 $("#down-next-difusores").click(function(){
@@ -498,6 +494,28 @@ $("#down-next-difusores").click(function(){
     $( "#divResumen" ).show();
 });
 
+
+$("#back-tabletas").click(function(){
+    hideEverythingTwice();
+    $( "#divAceites" ).show();
+});
+$("#back-aerosoles").click(function(){
+    hideEverythingTwice();
+    $( "#divTabletas" ).show();
+});
+$("#back-sachet").click(function(){
+    hideEverythingTwice();
+    $( "#divAerosoles" ).show();
+});
+$("#back-difusores").click(function(){
+    hideEverythingTwice();
+    $("#divSachet" ).show();
+});
+$("#back-resumen").click(function(){
+   hideEverythingTwice();
+    $( "#divDifusores" ).show();
+}); 
+//bottom btns
 $("#down-back-tabletas").click(function(){
     hideEverythingTwice();
     $( "#divAceites" ).show();
@@ -506,11 +524,18 @@ $("#down-back-aerosoles").click(function(){
     hideEverythingTwice();
     $( "#divTabletas" ).show();
 });
+$("#down-back-sachet").click(function(){
+    hideEverythingTwice();
+    $( "#divAerosoles" ).show();
+});
 $("#down-back-difusores").click(function(){
     hideEverythingTwice();
-    $("#divAerosoles" ).show();
+    $("#divSachet" ).show();
 });
-
+$("#down-back-resumen").click(function(){
+    hideEverythingTwice();
+    $("#divSachet" ).show();
+});
 
 
 
