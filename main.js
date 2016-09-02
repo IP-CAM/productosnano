@@ -11,6 +11,7 @@ jQuery(document).ready(function() {
         $("#divResumen").hide();
         $("#table-toggle-baby").hide();
         $("#table-toggle-bouquet").hide();
+
     }
 
     hideEverything();
@@ -543,4 +544,7 @@ $("#down-back-resumen").click(function() {
 //toggle dropdown
 $("#toggle-baby").click(function(){
     $( "#table-toggle-baby" ).toggle(2000)
+});
+$("#toggle-bouquet").click(function(){
+    $( "#table-toggle-bouquet" ).toggle(2000)
 });
