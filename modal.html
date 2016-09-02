@@ -745,53 +745,61 @@
                   <th id="toggle-baby">Baby<th><!--tabla grande -->
                      <table id="table-toggle-baby"><!-- tbla insider-->
                         <thead>
-                           <tr>
-                              <th>Mono</th>
-                              <th>Lapa</th>
-                              <th>Tucán</th>
-                              <th>Rana</th>
-                              <th>Rana hippy</th>
-                              <th>Perezoso</th>
-                           </tr>
+                           <tr></tr>
                         </thead>
                         <tbody>
+                                             <!--inputId, aroma, producId, currentField, aromaId, aromaT, idAromaT) 
+                           onclick="plusClick('Jazmin10','1343','57','Jazmin10input','546','','')"
+                        -->
                            <tr>
-                              <td>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyTablets" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyTablets" value="0" class="inputstabls" type="text" id="BabyTabletsinputs">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyTablets" type="button" onclick="plusClick('BabyTablets','1663','279','BabyTabletsinputs','557','1567','556')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
                                  <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
-
-                              <td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="" type="text" id="BabyT10input">
-                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
-                              </td>
-
-                              <td>
-                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="" type="text" id="BabyT10input">
-                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
-                              </td>
-
-                              <td>
-                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="" type="text" id="BabyT10input">
-                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
-                              </td>
-
-                              <td>
-                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="" type="text" id="BabyT10input">
-                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
-                              </td>
-
-                              <td>
-                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
                            </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets"> 
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tr>
                         </tbody>
                      </table>
                </tr>
@@ -800,226 +808,541 @@
                      <table id="table-toggle-bouquet"><!-- tbla insider-->
                         <thead>
                            <tr>
-                              <th>Mono</th>
-                              <th>Lapa</th>
-                              <th>Tucán</th>
-                              <th>Rana</th>
-                              <th>Rana hippy</th>
-                              <th>Perezoso</th>
+                              
                            </tr>
                         </thead>
                         <tbody>
                            <tr>
-                              <td>
+                              <th>Mono</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="inputs-tablets" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
-
-                              <td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="inputs-tablets" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
-
-                              <td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="inputs-tablets" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
-
-                              <td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="inputs-tablets" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
-
-                              <td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="inputs-tablets" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
-
-                              <td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
                                  <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
-                                 <input name="BabyT10" value="0" class="inputs-tablets" type="text" id="BabyT10input">
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
                                  <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
                               </td>
                            </tr>
                         </tbody>
                      </table>
                </tr>
-               <!-- <tr> 
-                  <th scope="row">Bouquet</th>
-                  <td>                              
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select>                        
-                  </td>
-                  <td>
-                     <button value="-" class="qtyminus btn btn-default" field="BouquetT10" type="button" onclick="minusClick('BouquetT10','BouquetT10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NjtzOjQ6IjE1NzQiO2k6NTU3O3M6NDoiMTU3NyI7fX0=')">  - </button>                            
-                     <input name="BouquetT10" value="0" class="qty" type="text" id="BouquetT10input">
-                     <button value="+" class="qtyplus btn btn-default" field="BouquetT10" type="button" onclick="plusClick('BouquetT10','1574','279','BouquetT10input','556','1577','557')"> + </button>
-                  </td>
+               <tr>
+                  <th id="toggle-Coco">Coco<th><!--tabla grande -->
+                     <table id="table-toggle-Coco"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Coco</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select> 
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="CocotT10" type="button" onclick="minusClick('CocotT10','CocotT10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NjtzOjQ6IjE1NzUiO2k6NTU3O3M6NDoiMTU3NyI7fX0=')">   - </button>                           
-                     <input name="CocotT10" value="0" class="qty" type="text" id="CocotT10input">
-                     <button value="+" class="qtyplus btn btn-default" field="CocotT10" type="button" onclick="plusClick('CocotT10','1575','279','CocotT10input','556','1577','557')">  + </button>                         
-                  </td>
+                  <th id="toggle-bouquet">Floral<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Floral</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select> 
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Floralt10" type="button">  - </button>
-                     <input name="Floralt10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Floralt10" type="button">  + </button>
-                  </td>
+                  <th id="toggle-bouquet">Fresa<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Fresa</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select> 
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Fresat10" type="button">  - </button>
-                     <input name="Fresat10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Fresat10" type="button">  + </button>
-                  </td>
+                  <th id="toggle-bouquet">Lavanda<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Lavanda</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select> 
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Lavandat10" type="button"> - </button>
-                     <input name="Lavandat10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Lavandat10" type="button">  + </button>
-                  </td>
+                  <th id="toggle-bouquet">Magnolia<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Magnolia</th>
-                  <td>
-                      <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select>  
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Magnoliat10" type="button"> - </button>
-                     <input name="Magnoliat10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Magnoliat10" type="button"> + </button>
-                  </td>
+                  <th id="toggle-bouquet">Melocoton<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Melocoton</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select> 
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Melocotont10" type="button">  - </button>
-                     <input name="Melocotont10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Melocotont10" type="button"> + </button>
-                  </td>
+                  <th id="toggle-bouquet">Sansalo<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
                <tr>
-                  <th scope="row">Sandalo</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select>  
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Sandalot10" type="button">  - </button>
-                      <input name="Sandalot10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Sandalot10" type="button"> + </button>
-                  </td>
+                  <th id="toggle-bouquet">Vainilla<th><!--tabla grande -->
+                     <table id="table-toggle-bouquet"><!-- tbla insider-->
+                        <thead>
+                           <tr>
+                              
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th>Mono</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Lapa</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Tucán</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana hippy</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Rana</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                           <tr>
+                              <th>Oso perezoso</th>
+                              <td class="td-tablets">
+                                 <button value="-" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="minusClick('BabyT10','BabyT10input','=')"> - </button>
+                                 <input name="BabyT10" value="0" class="inputstabls" type="text" id="BabyT10input">
+                                 <button value="+" class="qtytablets btn btn-default" field="BabyT10" type="button" onclick="plusClick('BabyT10','','','BabyT10input','','','')">  + </button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
                </tr>
-               <tr>
-                  <th scope="row">Vainilla</th>
-                  <td>
-                     <select name="option[556]" id="input-option556" class="form-control">
-                        <option value="">-Seleccionar tipo-</option>
-                        <option value="1568">Mono</option>
-                        <option value="1574">Lapa</option>
-                        <option value="1566">Tucán</option>
-                        <option value="1573">Rana</option>
-                        <option value="1567">Rana hippy</option>
-                        <option value="1572">Perezoso</option>
-                     </select> 
-                  </td>
-                  <td>                              
-                     <button value="-" class="qtyminus btn btn-default" field="Vainillat10" type="button">  - </button>
-                     <input name="Vainillat10" value="0" class="qty" type="text">                              
-                     <button value="+" class="qtyplus btn btn-default" field="Vainillat10" type="button">   + </button>
-                  </td>
-               </tr> -->
             </tbody>
                </table>
                   <button class="btn btn-primary pull-right"id="down-next-tabletas" type="button">Siguiente</button>
@@ -1065,113 +1388,113 @@
                      <tr>
                         <th scope="row">Baby</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Babya10" type="button"> - </a> 
-                           <input name="Babya10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Babya10" type="button"> + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="babyDesodorante" type="button"> - </button> 
+                           <input name="babyDesodorante" value="0" class="qty" type="text">
+                           <button value="+" class="qtyplus btn btn-default" field="babyDesodorante" type="button"> + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Coco</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Cocoa10" type="button">  - </a>
-                           <input name="Cocoa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Cocoa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="cocoDesodorante" type="button">  - </button>
+                           <input name="cocoDesodorante" value="0" class="qty" type="text">
+                           <button value="+" class="qtyplus btn btn-default" field="cocoDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Floral</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Florala10" type="button"> - </a>
-                           <input name="Florala10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Florala10" type="button"> + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="floralDesodorante" type="button"> - </button>
+                           <input name="floralDesodorante" value="0" class="qty" type="text">
+                           <button value="+" class="qtyplus btn btn-default" field="floralDesodorante" type="button"> + </button>
                         </td>
                        </tr>
                      <tr>
                         <th scope="row">Fresa</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Fresaa10" type="button">  - </a> 
-                           <input name="Fresaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Fresaa10" type="button"> + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="fresaDesodorante" type="button">  - </button> 
+                           <input name="fresaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="fresaDesodorante" type="button"> + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Lavanda</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Lavandaa10" type="button"> - </a>
-                           <input name="Lavandaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Lavandaa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="lavandaDesodorante" type="button"> - </button>
+                           <input name="lavandaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="lavandaDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Manzana</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Manzanaa10" type="button"> - </a>
-                           <input name="Manzanaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Manzanaa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="manzanaDesodorante" type="button"> - </button>
+                           <input name="manzanaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="manzanaDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                       <tr>
                         <th scope="row">Melocotón</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Melocotona10" type="button"> - </a> 
-                           <input name="Melocotona10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Melocotona10" type="button"> + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="melocotonDesodorante" type="button"> - </button> 
+                           <input name="melocotonDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="melocotonDesodorante" type="button"> + </button>
                         </td>
                      </tr>
                       <tr>
                         <th scope="row">Naranja</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Naranjaa10" type="button"> - </a>
-                           <input name="Naranjaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Naranjaa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="naranjaDesodorante" type="button"> - </button>
+                           <input name="naranjaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="naranjaDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Navidad</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Navidada10" type="button"> - </a> 
-                           <input name="Navidada10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Navidada10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="navidadDesodorante" type="button"> - </button> 
+                           <input name="navidadDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="navidadDesodorante" type="button">  + </button>
                         </td>
                       </tr>
                       <tr>
                         <th scope="row">Océano</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Oceanoa10" type="button">  - </a> 
-                           <input name="Oceanoa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Oceanoa10" type="button"> + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="oceanoDesodorante" type="button">  - </button> 
+                           <input name="oceanoDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="oceanoDesodorante" type="button"> + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Pino</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Pinoa10" type="button"> - </a>
-                           <input name="Pinoa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Pinoa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="pinoDesodorante" type="button"> - </button>
+                           <input name="pinoDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="pinoDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Rosa</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Rosaa10" type="button"> - </a>
-                           <input name="Rosaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Rosaa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="rosaDesodorante" type="button"> - </button>
+                           <input name="rosaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="rosaDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Vainilla</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Vainillaa10" type="button"> - </a>
-                           <input name="Vainillaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Vainillaa10" type="button"> + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="vainillaDesodorante" type="button"> - </button>
+                           <input name="vainillaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="vainillaDesodorante" type="button"> + </button>
                         </td>
                      </tr>
                      <tr>
                         <th scope="row">Violeta</th>
                         <td>                              
-                           <a value="-" class="qtyminus btn btn-default" field="Violetaa10" type="button"> - </a>
-                           <input name="Violetaa10" value="0" class="qty" type="text">                              
-                           <a value="+" class="qtyplus btn btn-default" field="Violetaa10" type="button">  + </a>
+                           <button value="-" class="qtyminus btn btn-default" field="violetaDesodorante" type="button"> - </button>
+                           <input name="violetaDesodorante" value="0" class="qty" type="text">                              
+                           <button value="+" class="qtyplus btn btn-default" field="violetaDesodorante" type="button">  + </button>
                         </td>
                      </tr>
                   </tbody>
@@ -1622,7 +1945,7 @@
                          <td> 
                         <button value="-" class="qtyminus btn btn-default" field="UltrasonidoArtesanal" type="button" onclick="minusClick('UltrasonidoArtesanal','UltrasonidoArtesanalinput','')"> - </button>  
                         <input name="UltrasonidoArtesanal" value="0" class="qty" type="text" id="UltrasonidoArtesanalinput"> 
-                        <button value="+" class="qtyplus btn btn-default" field="UltrasonidoArtesanal" id='incrementBtn'  onclick="plusClick('UltrasonidoArtesanal','','','UltrasonidoArtesanalinput','','','')">  + </button>
+                        <button value="+" class="qtyplus btn btn-default" field="UltrasonidoArtesanal" id='incrementBtn'  onclick="plusClick('UltrasonidoArtesanal','','300','UltrasonidoArtesanalinput','','','')">  + </button>
                      </td>
                      </tr>
                      <tr>

@@ -11,6 +11,15 @@ jQuery(document).ready(function() {
         $("#divResumen").hide();
         $("#table-toggle-baby").hide();
         $("#table-toggle-bouquet").hide();
+        $("#table-toggle-Coco").hide();
+        $("#table-toggle-Floral").hide();
+        $("#table-toggle-Fresa").hide();
+        $("#table-toggle-Lavanda").hide();
+        $("#table-toggle-Magnolia").hide();
+        $("#table-toggle-Melocoton").hide();
+        $("#table-toggle-Sansalo").hide();
+        $("#table-toggle-Vainilla").hide();
+  
 
     }
 
@@ -543,8 +552,32 @@ $("#down-back-resumen").click(function() {
 
 //toggle dropdown
 $("#toggle-baby").click(function(){
-    $( "#table-toggle-baby" ).toggle(2000)
+    $( "#table-toggle-baby" ).fadeToggle(2000)
 });
 $("#toggle-bouquet").click(function(){
-    $( "#table-toggle-bouquet" ).toggle(2000)
+    $( "#table-toggle-bouquet" ).fadeToggle(2000)
+});
+$("#toggle-Coco").click(function(){
+    $( "#table-toggle-Coco" ).fadeToggle(2000)
+});
+$("#toggle-Floral").click(function(){
+    $( "#table-toggle-Floral" ).fadeToggle(2000)
+});
+$("#toggle-Fresa").click(function(){
+    $( "#table-toggle-Fresa" ).fadeToggle(2000)
+});
+$("#toggle-Lavanda").click(function(){
+    $( "#table-toggle-Lavanda" ).fadeToggle(2000)
+});
+$("#toggle-Magnolia").click(function(){
+    $( "#table-toggle-Magnolia" ).fadeToggle(2000)
+});
+$("#toggle-Melocoton").click(function(){
+    $( "#table-toggle-Melocoton" ).fadeToggle(2000)
+});
+$("#toggle-Sansalo").click(function(){
+    $( "#table-toggle-Sansalo" ).fadeToggle(2000)
+});
+$("#toggle-Vainilla").click(function(){
+    $( "#table-toggle-Vainilla" ).fadeToggle(2000)
 });
