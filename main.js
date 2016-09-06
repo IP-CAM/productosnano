@@ -53,6 +53,7 @@ var globalImpuesto = 0;
 var dataLocalStorage = [];
 var storageQuantity;
 var storageTotalPrice;
+var resumeData = [];
 /**
  * [getLocalStorage get the local storage for display]
  */
@@ -80,6 +81,41 @@ var getLocalStorage = function() {
     document.getElementById("price-dif").innerHTML = storageTotalPrice;
     document.getElementById("price-res").innerHTML = storageTotalPrice;
     document.getElementById("price-sachet").innerHTML = storageTotalPrice;
+
+    //fill out the resume table from the data of local storage
+     var resumenStorage = JSON.parse(localStorage.getItem("resumen"));
+    console.log('resumen que viene del localstorage ',resumenStorage);
+
+    if(resumenStorage){
+        tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
+        tbobyProducts.innerHTML = "";
+        resumenStorage.map(function(Object) {
+            
+            
+                console.log('Map of resume from localstorage');
+                console.log('%%%', resumenStorage);
+                var fila = document.createElement('tr');
+                var celdaNameOfProduct = document.createElement('td');
+                var celdaQuantityByProduct = document.createElement('td');
+                var celdaPriceByProduct = document.createElement('td');
+                
+                var nodoNameProduct = document.createTextNode(Object.name);
+                var nodoQuantityByProduct = document.createTextNode(Object.quantity);
+                var nodoPriceByProduct = document.createTextNode(Object.price);
+
+                $(celdaNameOfProduct).append(nodoNameProduct);
+                $(fila).append(celdaNameOfProduct);
+
+                $(celdaQuantityByProduct).append(nodoQuantityByProduct);
+                $(fila).append(celdaQuantityByProduct);
+
+                $(celdaPriceByProduct).append(nodoPriceByProduct);
+                $(fila).append(celdaPriceByProduct);
+
+                $(tbobyProducts).append(fila);
+        });
+    }
+     
 }
 
 /**
@@ -141,10 +177,8 @@ function plusClick(inputId, aroma, producId, currentField, aromaId, aromaT, idAr
         value: document.getElementById(currentField).value
     };
 
-    //console.log(productData);
     productApi = JSON.parse(productData);
-    //data local storage
-    console.log('data local storage: ', productLsObject);
+    //console.log('data local storage: ', productLsObject);
 
     jQuery.ajax({
         url: 'http://www.productosnano.com/index.php?route=api/cart/add',
@@ -250,12 +284,12 @@ function getResume() {
         success: function(data) {
             console.log('success getting the info from the cart');
             //imprimir resultados en el modal
+            console.log(data);
             globalSubTotal = (data.totals[0].text);
             globalImpuesto = (data.totals[1].text);
             globalTotalMoney = (data.totals[2].text);
             localStorage.setItem("totalPrice", globalTotalMoney);
             console.log(globalTotalMoney);
-            console.log(data);
             document.getElementById("price").innerHTML = globalTotalMoney;
             document.getElementById("price-tablets").innerHTML = globalTotalMoney;
             document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
@@ -264,7 +298,7 @@ function getResume() {
             document.getElementById("price-res").innerHTML = globalTotalMoney;
             //llenar las tablas del resumen.
             data.totals.map(function(total) {
-                //console.log('MAP DE LISTA DE RESUMEN');
+                console.log('Map of resume');
                 var fila = document.createElement('tr');
                 var celdaDetalle = document.createElement('td');
                 var celdaMonto = document.createElement('td');
@@ -279,18 +313,31 @@ function getResume() {
                 $(fila).append(celdaMonto);
                 $(tbobyMoney).append(fila);
             });
-
-            //console.log('total de dinero a pagar: '+ globalTotalMoney);
-            //total de productos
-
+            //limpiar el array para que no acumule datos inecesarios
+            resumeData = [];
             data.products.map(function(product) {
-                //console.log('MAP DE PRODUCTOS');
-                //console.log(product);
+                console.log('Map of products');
+                console.log('%%%', product);
+
+                var dataForLocalStorageResume ={
+                    name: product.name,
+                    price: product.price,
+                    quantity: product.quantity
+                }
+                resumeData.push(dataForLocalStorageResume);
+                console.log('objeto para el resumen ',resumeData);
+                localStorage.setItem("resumen", JSON.stringify(resumeData));
+
                 var fila = document.createElement('tr');
                 var celdaProduct = document.createElement('td');
                 var celdaQuantity = document.createElement('td');
                 var celdaPrice = document.createElement('td');
 
+                 /*localStorage.setItem("nameOfProduct", product.name);
+                localStorage.setItem("quantityOfProduct", product.quantity);
+                localStorage.setItem("priceOfProduct", product.price);
+                //console.log(localStorage.getItem('nameOfProduct'));*/
+                
                 var nodoTxtProduct = document.createTextNode(product.name);
                 var nodoTxtQuantity = document.createTextNode(product.quantity);
                 var nodoTxtPrice = document.createTextNode(product.price);
