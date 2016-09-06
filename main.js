@@ -259,6 +259,7 @@ function getResume() {
             document.getElementById("price").innerHTML = globalTotalMoney;
             document.getElementById("price-tablets").innerHTML = globalTotalMoney;
             document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
+            document.getElementById("price-sachet").innerHTML = globalTotalMoney;
             document.getElementById("price-dif").innerHTML = globalTotalMoney;
             document.getElementById("price-res").innerHTML = globalTotalMoney;
             //llenar las tablas del resumen.
@@ -314,6 +315,7 @@ function getResume() {
             document.getElementById("badge-tablets").innerHTML = globalQuantity;
             document.getElementById("badge-aerosoles").innerHTML = globalQuantity;
             document.getElementById("badge-dif").innerHTML = globalQuantity;
+            document.getElementById("badge-sachet").innerHTML = globalQuantity;
             document.getElementById("badge-res").innerHTML = globalQuantity;
         },
         error: function(error) {
