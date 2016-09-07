@@ -303,6 +303,8 @@ function getResume() {
                 var celdaDetalle = document.createElement('td');
                 var celdaMonto = document.createElement('td');
 
+                celdaMonto.setAttribute('id','monto-table');
+
                 var nodoTxtDetalle = document.createTextNode(total.title);
                 var nodoTxtMonto = document.createTextNode(total.text);
 
@@ -534,6 +536,7 @@ $("#next-difusores").click(function() {
     hideEverythingTwice();
     $("#divResumen").show();
 });
+
 //bottom buttons
 $("#down-next-aceites").click(function() {
     hideEverythingTwice();
@@ -574,6 +577,10 @@ $("#back-difusores").click(function() {
     $("#divSachet").show();
 });
 $("#back-resumen").click(function() {
+    hideEverythingTwice();
+    $("#divDifusores").show();
+});
+$("#top-back-resumen").click(function() {
     hideEverythingTwice();
     $("#divDifusores").show();
 });

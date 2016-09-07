@@ -3,14 +3,31 @@
 
     <div id="divAceites">
         <div class="modal-header text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button"><span aria-hidden="true">×</span></button> <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> <span class="titulo2">Aceites Nano</span>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge"></span></button>
+            <div id="div-logo">
+                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
+                    <span aria-hidden="true">×</span>
+                </button> 
+                <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> 
             </div>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button">
-                     <i aria-hidden="true" class="fa fa-credit-card"></i> 
-                     <span class="badge" id="price"></span></button>
+            <div id="div-parent-atrib">
+                <div class="main-title">
+                <!--<span class="titulo2">Aceites Nano</span>-->
+                    <h2 class='titulo2'>Aceites Nano</h2>
+                </div>
+                <div class="main-cart-info">
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                            <i aria-hidden="true" class="fa fa-shopping-cart"></i> 
+                            <span class="badge" id="badge"></span>
+                        </button>
+                    </div>
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                             <i aria-hidden="true" class="fa fa-credit-card"></i> 
+                             <span class="badge" id="price"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-body" id='tblAceites'>
@@ -217,84 +234,7 @@
                             <button value="+" class="qtyplus btn btn-default" field="DuraznoMango65" type="button" onclick="plusClick('DuraznoMango65','1545','69','DuraznoMango65','549','','')"> + </button>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">Eco Bambú</th>
-                        <td>
-                            <button value="-" class="qtyminus btn btn-default" field="EcoBambu10" type="button" onclick="minusClick('EcoBambu10','EcoBambu10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjQiO319')"> - </button>
-                            <input name="EcoBambu10" value="0" class="qty" type="text" id="EcoBambu10input">
-                            <button value="+" class="qtyplus btn btn-default" field="EcoBambu10" type="button" onclick="plusClick('EcoBambu10','1364','266','EcoBambu10input','550','','')">  + </button>
-                        </td>
-                        <!-- <td>                              
-                           <button value="-" class="qtyminus btn btn-default" field="EcoBambu65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
-                           <input name="EcoBambu65" value="0" class="qty" type="text" id="EcoBambu65input">
-                           <button value="+" class="qtyplus btn btn-default" field="EcoBambu65" type="button" onclick="plusClick('EcoBambu65','1549','69','EcoBambu65input','549','','')">  + </button>
-                        </td> -->
-                    </tr>
-                    <th scope="row">Eco Cereza Floral</th>
-                    <td>
-                        <button value="-" class="qtyminus btn btn-default" field="EcoCerezaFloral10" type="button" onclick="minusClick('EcoCerezaFloral10','EcoCerezaFloral10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjIiO319')"> - </button>
-                        <input name="EcoCerezaFloral10" value="0" class="qty" type="text" id="EcoCerezaFloral10input">
-                        <button value="+" class="qtyplus btn btn-default" field="EcoCerezaFloral10" type="button" onclick="plusClick('EcoCerezaFloral10','1362','266','EcoCerezaFloral10input','550','','')"> + </button>
-                    </td>
-                    <!--<td>                              
-                           <button value="-" class="qtyminus btn btn-default" field="EcoCerezaFloral65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>                              
-                           <input name="EcoCerezaFloral65" value="0" class="qty" type="text" id="EcoCerezaFloral65input">
-                           <button value="+" class="qtyplus btn btn-default" field="EcoCerezaFloral65" type="button" onclick="plusClick('EcoCerezaFloral65','1549','69','EcoCerezaFloral65input','549','','')">+ </button>
-                        </td>-->
-                    </tr>
-                    <tr>
-                        <th scope="row">Eco Citrus</th>
-                        <td>
-                            <button value="-" class="qtyminus btn btn-default" field="EcoCitrus10" type="button" onclick="minusClick('EcoCitrus10','EcoCitrus10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjUiO319')"> - </button>
-                            <input name="EcoCitrus10" value="0" class="qty" type="text" id="EcoCitrus10input">
-                            <button value="+" class="qtyplus btn btn-default" field="EcoCitrus10" type="button" onclick="plusClick('EcoCitrus10','1365','266','EcoCitrus10input','550','','')"> + </button>
-                        </td>
-                        <!--<td>                              
-                           <button value="-" class="qtyminus btn btn-default" field="EcoCitrus65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
-                           <input name="EcoCitrus65" value="0" class="qty" type="text" id="EcoCitrus65input">
-                           <button value="+" class="qtyplus btn btn-default" field="EcoCitrus65" type="button" onclick="plusClick('EcoCitrus65','1549','69','EcoCitrus65input','549','','')"> + </button>
-                        </td>-->
-                    </tr>
-                    <tr>
-                        <th scope="row">Eco Lavanda</th>
-                        <td>
-                            <button value="-" class="qtyminus btn btn-default" field="EcoLavanda10" type="button" onclick="minusClick('EcoLavanda10','EcoLavanda10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjMiO319')"> - </button>
-                            <input name="EcoLavanda10" value="0" class="qty" type="text" id="EcoLavanda10input">
-                            <button value="+" class="qtyplus btn btn-default" field="EcoLavanda10" type="button" onclick="plusClick('EcoLavanda10','1363','266','EcoLavanda10input','550','','')"> + </button>
-                        </td>
-                        <!--<td>                              
-                           <button value="-" class="qtyminus btn btn-default" field="EcoLavanda65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
-                           <input name="EcoLavanda65" value="0" class="qty" type="text" id="EcoLavanda65input">
-                           <button value="+" class="qtyplus btn btn-default" field="EcoLavanda65" type="button" onclick="plusClick('EcoLavanda65','1549','69','EcoLavanda65input','549','','')"> + </button>
-                        </td>-->
-                    </tr>
-                    <tr>
-                        <th scope="row">Eco Naranja</th>
-                        <td>
-                            <button value="-" class="qtyminus btn btn-default" field="EcoNaranja10" type="button" onclick="minusClick('EcoNaranja10','EcoNaranja10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjYiO319')"> - </button>
-                            <input name="EcoNaranja10" value="0" class="qty" type="text" id="EcoNaranja10input">
-                            <button value="+" class="qtyplus btn btn-default" field="EcoNaranja10" type="button" onclick="plusClick('EcoNaranja10','1366','266','EcoNaranja10input','550','','')">  + </button>
-                        </td>
-                        <!--<td>                              
-                           <button value="-" class="qtyminus btn btn-default" field="EcoNaranja65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
-                           <input name="EcoNaranja65" value="0" class="qty" type="text" id="EcoNaranja65input">
-                           <button value="+" class="qtyplus btn btn-default" field="EcoNaranja65" type="button" onclick="plusClick('EcoNaranja65','1549','69','EcoNaranja65input','549','','')"> + </button>
-                        </td>-->
-                    </tr>
-                    <tr>
-                        <th scope="row">Eco Manzana</th>
-                        <td>
-                            <button value="-" class="qtyminus btn btn-default" field="EcoManzana10" type="button" onclick="minusClick('EcoManzana10','EcoManzana10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjE1OTEiO319')"> - </button>
-                            <input name="EcoManzana10" value="0" class="qty" type="text" id="EcoManzana10input">
-                            <button value="+" class="qtyplus btn btn-default" field="EcoManzana10" type="button" onclick="plusClick('EcoManzana10','1591','266','EcoManzana10input','550','','')"> + </button>
-                        </td>
-                        <!--<td>                              
-                           <button value="-" class="qtyminus btn btn-default" field="EcoManzana65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
-                           <input name="EcoManzana65" value="0" class="qty" type="text" id="EcoManzana65input">
-                           <button value="+" class="qtyplus btn btn-default" field="EcoManzana65" type="button" onclick="plusClick('EcoManzana65','1549','69','EcoManzana65input','549','','')"> + </button>
-                        </td>-->
-                    </tr>
-                    <tr>
+                   
                         <th scope="row">Eucalipto</th>
                         <td>
                             <button value="-" class="qtyminus btn btn-default" field="eucalipto10" type="button" onclick="minusClick('eucalipto10','eucalipto10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjU3O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ2O3M6NDoiMTMzNyI7fX0=')"> - </button>
@@ -697,6 +637,84 @@
                             <button value="+" class="qtyplus btn btn-default" field="Ylang65" type="button" onclick="plusClick('Ylang65','1552','69','Ylang65input','549','','')"> + </button>
                         </td>
                     </tr>
+                     <tr>
+                        <th scope="row">Eco Bambú</th>
+                        <td>
+                            <button value="-" class="qtyminus btn btn-default" field="EcoBambu10" type="button" onclick="minusClick('EcoBambu10','EcoBambu10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjQiO319')"> - </button>
+                            <input name="EcoBambu10" value="0" class="qty" type="text" id="EcoBambu10input">
+                            <button value="+" class="qtyplus btn btn-default" field="EcoBambu10" type="button" onclick="plusClick('EcoBambu10','1364','266','EcoBambu10input','550','','')">  + </button>
+                        </td>
+                        <!-- <td>                              
+                           <button value="-" class="qtyminus btn btn-default" field="EcoBambu65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
+                           <input name="EcoBambu65" value="0" class="qty" type="text" id="EcoBambu65input">
+                           <button value="+" class="qtyplus btn btn-default" field="EcoBambu65" type="button" onclick="plusClick('EcoBambu65','1549','69','EcoBambu65input','549','','')">  + </button>
+                        </td> -->
+                    </tr>
+                    <th scope="row">Eco Cereza Floral</th>
+                    <td>
+                        <button value="-" class="qtyminus btn btn-default" field="EcoCerezaFloral10" type="button" onclick="minusClick('EcoCerezaFloral10','EcoCerezaFloral10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjIiO319')"> - </button>
+                        <input name="EcoCerezaFloral10" value="0" class="qty" type="text" id="EcoCerezaFloral10input">
+                        <button value="+" class="qtyplus btn btn-default" field="EcoCerezaFloral10" type="button" onclick="plusClick('EcoCerezaFloral10','1362','266','EcoCerezaFloral10input','550','','')"> + </button>
+                    </td>
+                    <!--<td>                              
+                           <button value="-" class="qtyminus btn btn-default" field="EcoCerezaFloral65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>                              
+                           <input name="EcoCerezaFloral65" value="0" class="qty" type="text" id="EcoCerezaFloral65input">
+                           <button value="+" class="qtyplus btn btn-default" field="EcoCerezaFloral65" type="button" onclick="plusClick('EcoCerezaFloral65','1549','69','EcoCerezaFloral65input','549','','')">+ </button>
+                        </td>-->
+                    </tr>
+                    <tr>
+                        <th scope="row">Eco Citrus</th>
+                        <td>
+                            <button value="-" class="qtyminus btn btn-default" field="EcoCitrus10" type="button" onclick="minusClick('EcoCitrus10','EcoCitrus10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjUiO319')"> - </button>
+                            <input name="EcoCitrus10" value="0" class="qty" type="text" id="EcoCitrus10input">
+                            <button value="+" class="qtyplus btn btn-default" field="EcoCitrus10" type="button" onclick="plusClick('EcoCitrus10','1365','266','EcoCitrus10input','550','','')"> + </button>
+                        </td>
+                        <!--<td>                              
+                           <button value="-" class="qtyminus btn btn-default" field="EcoCitrus65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
+                           <input name="EcoCitrus65" value="0" class="qty" type="text" id="EcoCitrus65input">
+                           <button value="+" class="qtyplus btn btn-default" field="EcoCitrus65" type="button" onclick="plusClick('EcoCitrus65','1549','69','EcoCitrus65input','549','','')"> + </button>
+                        </td>-->
+                    </tr>
+                    <tr>
+                        <th scope="row">Eco Lavanda</th>
+                        <td>
+                            <button value="-" class="qtyminus btn btn-default" field="EcoLavanda10" type="button" onclick="minusClick('EcoLavanda10','EcoLavanda10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjMiO319')"> - </button>
+                            <input name="EcoLavanda10" value="0" class="qty" type="text" id="EcoLavanda10input">
+                            <button value="+" class="qtyplus btn btn-default" field="EcoLavanda10" type="button" onclick="plusClick('EcoLavanda10','1363','266','EcoLavanda10input','550','','')"> + </button>
+                        </td>
+                        <!--<td>                              
+                           <button value="-" class="qtyminus btn btn-default" field="EcoLavanda65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
+                           <input name="EcoLavanda65" value="0" class="qty" type="text" id="EcoLavanda65input">
+                           <button value="+" class="qtyplus btn btn-default" field="EcoLavanda65" type="button" onclick="plusClick('EcoLavanda65','1549','69','EcoLavanda65input','549','','')"> + </button>
+                        </td>-->
+                    </tr>
+                    <tr>
+                        <th scope="row">Eco Naranja</th>
+                        <td>
+                            <button value="-" class="qtyminus btn btn-default" field="EcoNaranja10" type="button" onclick="minusClick('EcoNaranja10','EcoNaranja10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjEzNjYiO319')"> - </button>
+                            <input name="EcoNaranja10" value="0" class="qty" type="text" id="EcoNaranja10input">
+                            <button value="+" class="qtyplus btn btn-default" field="EcoNaranja10" type="button" onclick="plusClick('EcoNaranja10','1366','266','EcoNaranja10input','550','','')">  + </button>
+                        </td>
+                        <!--<td>                              
+                           <button value="-" class="qtyminus btn btn-default" field="EcoNaranja65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
+                           <input name="EcoNaranja65" value="0" class="qty" type="text" id="EcoNaranja65input">
+                           <button value="+" class="qtyplus btn btn-default" field="EcoNaranja65" type="button" onclick="plusClick('EcoNaranja65','1549','69','EcoNaranja65input','549','','')"> + </button>
+                        </td>-->
+                    </tr>
+                    <tr>
+                        <th scope="row">Eco Manzana</th>
+                        <td>
+                            <button value="-" class="qtyminus btn btn-default" field="EcoManzana10" type="button" onclick="minusClick('EcoManzana10','EcoManzana10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI2NjtzOjY6Im9wdGlvbiI7YToxOntpOjU1MDtzOjQ6IjE1OTEiO319')"> - </button>
+                            <input name="EcoManzana10" value="0" class="qty" type="text" id="EcoManzana10input">
+                            <button value="+" class="qtyplus btn btn-default" field="EcoManzana10" type="button" onclick="plusClick('EcoManzana10','1591','266','EcoManzana10input','550','','')"> + </button>
+                        </td>
+                        <!--<td>                              
+                           <button value="-" class="qtyminus btn btn-default" field="EcoManzana65" type="button" onclick="minusClick('Almendra10','Almendra10input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjY5O3M6Njoib3B0aW9uIjthOjE6e2k6NTQ5O3M6NDoiMTU1MyI7fX0=')"> - </button>
+                           <input name="EcoManzana65" value="0" class="qty" type="text" id="EcoManzana65input">
+                           <button value="+" class="qtyplus btn btn-default" field="EcoManzana65" type="button" onclick="plusClick('EcoManzana65','1549','69','EcoManzana65input','549','','')"> + </button>
+                        </td>-->
+                    </tr>
+                    <tr>
                 </tbody>
             </table>
             <button class="btn btn-primary pull-right" id="down-next-aceites" type="button">Siguiente</button>
@@ -709,14 +727,31 @@
 
     <div id="divTabletas">
         <div class="modal-header text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button"><span aria-hidden="true">×</span></button> <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> <span class="titulo2">Tabletas Nano</span>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge-tablets"></span></button>
+            <div id="div-logo">
+                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
+                    <span aria-hidden="true">×</span>
+                </button> 
+                <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> 
             </div>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button">
-                     <i aria-hidden="true" class="fa fa-credit-card"></i> 
-                     <span class="badge" id="price-tablets"></span></button>
+            <div id="div-parent-atrib">
+                <div class="main-title">
+                <!--<span class="titulo2">Aceites Nano</span>-->
+                    <h2 class='titulo2'>Tabletas Nano</h2>
+                </div>
+                <div class="main-cart-info">
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                            <i aria-hidden="true" class="fa fa-shopping-cart"></i> 
+                            <span class="badge" id="badge-tablets"></span>
+                        </button>
+                    </div>
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                             <i aria-hidden="true" class="fa fa-credit-card"></i> 
+                             <span class="badge" id="price-tablets"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-body">
@@ -795,6 +830,7 @@
                                                 <button value="+" class="qtytablets btn btn-default" field="baby-D-Oso" type="button" onclick="plusClick('baby-D-Oso','1664','279','baby-D-Oso-input','557','1567','556')">  + </button>
                                             </td>
                                         </tr>
+
                     </tr>
                     </tbody>
                     </table>
@@ -1376,14 +1412,31 @@
 
     <div id="divAerosoles">
         <div class="modal-header text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button"><span aria-hidden="true">×</span></button> <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> <span class="titulo2">Desodorante ambiental</span>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge-aerosoles"></span></button>
+            <div id="div-logo">
+                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
+                    <span aria-hidden="true">×</span>
+                </button> 
+                <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> 
             </div>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button">
-                     <i aria-hidden="true" class="fa fa-credit-card"></i> 
-                     <span class="badge" id="price-aerosoles"></span></button>
+            <div id="div-parent-atrib">
+                <div class="main-title">
+                <!--<span class="titulo2">Aceites Nano</span>-->
+                    <h2 class='titulo2'>Desodorante ambiental</h2>
+                </div>
+                <div class="main-cart-info">
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                            <i aria-hidden="true" class="fa fa-shopping-cart"></i> 
+                            <span class="badge" id="badge-aerosoles"></span>
+                        </button>
+                    </div>
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                             <i aria-hidden="true" class="fa fa-credit-card"></i> 
+                             <span class="badge" id="price-aerosoles"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-body">
@@ -1531,21 +1584,31 @@
  
     <div id="divSachet">
         <div class="modal-header text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
-                  <span aria-hidden="true">×</span>
-               </button>
-            <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png">
-            <span class="titulo2">Sachet</span>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> 
-                     <span class="badge" id="badge-sachet"></span>
-                  </button>
+            <div id="div-logo">
+                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
+                    <span aria-hidden="true">×</span>
+                </button> 
+                <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> 
             </div>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button">
-                     <i aria-hidden="true" class="fa fa-credit-card"></i> 
-                     <span class="badge" id="price-sachet"></span>
-                  </button>
+            <div id="div-parent-atrib">
+                <div class="main-title">
+                <!--<span class="titulo2">Aceites Nano</span>-->
+                    <h2 class='titulo2'>Sachet</h2>
+                </div>
+                <div class="main-cart-info">
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                            <i aria-hidden="true" class="fa fa-shopping-cart"></i> 
+                            <span class="badge" id="badge-sachet"></span>
+                        </button>
+                    </div>
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                             <i aria-hidden="true" class="fa fa-credit-card"></i> 
+                             <span class="badge" id="price-sachet"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-body">
@@ -1941,17 +2004,33 @@
 
     <div id="divDifusores">
         <div class="modal-header text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button"><span aria-hidden="true">×</span></button> <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"><span class="titulo2">Difusores Nano</span>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge-dif"></span></button>
+            <div id="div-logo">
+                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
+                    <span aria-hidden="true">×</span>
+                </button> 
+                <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> 
             </div>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button">
-                     <i aria-hidden="true" class="fa fa-credit-card"></i> 
-                     <span class="badge" id="price-dif"></span></button>
+            <div id="div-parent-atrib">
+                <div class="main-title">
+                <!--<span class="titulo2">Aceites Nano</span>-->
+                    <h2 class='titulo2'>Difusores Nano</h2>
+                </div>
+                <div class="main-cart-info">
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                            <i aria-hidden="true" class="fa fa-shopping-cart"></i> 
+                            <span class="badge" id="badge-dif"></span>
+                        </button>
+                    </div>
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                             <i aria-hidden="true" class="fa fa-credit-card"></i> 
+                             <span class="badge" id="price-dif"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-
         <div class="modal-body">
             <table class="table table-bordered table-hover">
                 <div>
@@ -1993,24 +2072,44 @@
 
     <div id="divResumen">
         <div class="modal-header text-center">
-            <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
-                  <span aria-hidden="true">×</span>
-               </button>
-            <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png">
-            <span class="titulo2">Resumen</span>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button"><i aria-hidden="true" class="fa fa-shopping-cart"></i> <span class="badge" id="badge-res"></span></button>
+            <div id="div-logo">
+                <button aria-label="Close" class="close" data-dismiss="modal" id="aceites" type="button">
+                    <span aria-hidden="true">×</span>
+                </button> 
+                <img class="pull-left img-logo" src="http://www.productosnano.com/image/cache/sacheth.png"> 
             </div>
-            <div class="pull-right carritoCompras">
-                <button class="btn btn-success" type="button">
-                     <i aria-hidden="true" class="fa fa-credit-card"></i> 
-                     <span class="badge" id="price-res"></span></button>
+            <div id="div-parent-atrib">
+                <div class="main-title">
+                <!--<span class="titulo2">Aceites Nano</span>-->
+                    <h2 class='titulo2'>Resumen</h2>
+                </div>
+                <div class="main-cart-info">
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                            <i aria-hidden="true" class="fa fa-shopping-cart"></i> 
+                            <span class="badge" id="badge-res"></span>
+                        </button>
+                    </div>
+                    <div class="pull-right carritoCompras">
+                        <button class="btn btn-success" type="button">
+                             <i aria-hidden="true" class="fa fa-credit-card"></i> 
+                             <span class="badge" id="price-res"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="modal-body">
+            <div>
+                <button class="btn btn-primary pull-left" id="top-back-resumen" type="button">Atrás</button>
+                <br>
+                <div style="margin-top: 50px;"></div>
+            </div>
             <div id="tbl-resumen-products">
                 <table class="table table-bordered table-hover">
-                    <tbody></tbody>
+                    <tbody>
+                        
+                    </tbody>
                 </table>
             </div>
             <div class="row">
