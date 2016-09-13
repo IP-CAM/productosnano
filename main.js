@@ -61,7 +61,7 @@ var getLocalStorage = function() {
     //show the local storage in the inputs
     var storageData = JSON.parse(localStorage.getItem("InputsValues"));
     console.log('datos traidos del local storage: ', storageData);
-    if (storageData !== null || storageData !== undefined || storageData !== NaN || storageData !== 0 || storageData !== "" ){
+    if (storageData !== null && storageData !== undefined &&  storageData !== NaN &&  storageData !== 0 &&  storageData !== ""  ){
         storageData.map(function(field) {
             document.getElementById(field.idField).value = field.value;
         });
@@ -287,10 +287,17 @@ function getResume() {
             console.log('success getting the info from the cart');
             //imprimir resultados en el modal
             console.log(data);
-            if(data !== null || data !== undefined || data !== NaN || data !== 0 || data !== "" ){
+            if(data !== null && data !== undefined &&  data !== NaN &&  data !== 0 &&  data !== ""  ){
                 globalSubTotal = (data.totals[0].text);
                 globalImpuesto = (data.totals[1].text);
                 globalTotalMoney = (data.totals[2].text);
+                var totalNull = function(){
+                    if(globalTotalMoney !== undefined){
+                        globalTotalMoney = 0;
+                    }
+                    return globalTotalMoney;
+                }
+                
                 //ya la estoy guardando 
                 localStorage.setItem("totalPrice", globalTotalMoney);
                 console.log(globalTotalMoney);
@@ -301,73 +308,72 @@ function getResume() {
                 document.getElementById("price-sachet").innerHTML = globalTotalMoney;
                 document.getElementById("price-dif").innerHTML = globalTotalMoney;
                 document.getElementById("price-res").innerHTML = globalTotalMoney;
-
                 //llenar las tablas del resumen.
                 data.totals.map(function(total) {
-                console.log('Map of resume');
-                var fila = document.createElement('tr');
-                var celdaDetalle = document.createElement('td');
-                var celdaMonto = document.createElement('td');
+                    console.log('Map of resume');
+                    var fila = document.createElement('tr');
+                    var celdaDetalle = document.createElement('td');
+                    var celdaMonto = document.createElement('td');
 
-                celdaMonto.setAttribute('id','monto-table');
+                    celdaMonto.setAttribute('id','monto-table');
 
-                var nodoTxtDetalle = document.createTextNode(total.title);
-                var nodoTxtMonto = document.createTextNode(total.text);
+                    var nodoTxtDetalle = document.createTextNode(total.title);
+                    var nodoTxtMonto = document.createTextNode(total.text);
 
-                $(celdaDetalle).append(nodoTxtDetalle);
-                $(fila).append(celdaDetalle);
+                    $(celdaDetalle).append(nodoTxtDetalle);
+                    $(fila).append(celdaDetalle);
 
-                $(celdaMonto).append(nodoTxtMonto);
-                $(fila).append(celdaMonto);
-                $(tbobyMoney).append(fila);
-            });
+                    $(celdaMonto).append(nodoTxtMonto);
+                    $(fila).append(celdaMonto);
+                    $(tbobyMoney).append(fila);
+                });//map
                 //limpiar el array para que no acumule datos 
                 resumeData = [];
                 data.products.map(function(product) {
-                console.log('Map of products');
-                console.log('%%%', product);
+                    console.log('Map of products');
+                    console.log('%%%', product);
 
-                var dataForLocalStorageResume ={
-                    name: product.name,
-                    price: product.price,
-                    quantity: product.quantity
-                }
-                resumeData.push(dataForLocalStorageResume);
-                console.log('objeto para el resumen ',resumeData);
-                localStorage.setItem("resumen", JSON.stringify(resumeData));
+                    var dataForLocalStorageResume ={
+                        name: product.name,
+                        price: product.price,
+                        quantity: product.quantity
+                    }
+                    resumeData.push(dataForLocalStorageResume);
+                    console.log('objeto para el resumen ',resumeData);
+                    localStorage.setItem("resumen", JSON.stringify(resumeData));
 
-                var fila = document.createElement('tr');
-                var celdaProduct = document.createElement('td');
-                var celdaQuantity = document.createElement('td');
-                var celdaPrice = document.createElement('td');
-                
-                var nodoTxtProduct = document.createTextNode(product.name);
-                var nodoTxtQuantity = document.createTextNode(product.quantity);
-                var nodoTxtPrice = document.createTextNode(product.price);
+                    var fila = document.createElement('tr');
+                    var celdaProduct = document.createElement('td');
+                    var celdaQuantity = document.createElement('td');
+                    var celdaPrice = document.createElement('td');
+                    
+                    var nodoTxtProduct = document.createTextNode(product.name);
+                    var nodoTxtQuantity = document.createTextNode(product.quantity);
+                    var nodoTxtPrice = document.createTextNode(product.price);
 
-                $(celdaProduct).append(nodoTxtProduct);
-                $(fila).append(celdaProduct);
+                    $(celdaProduct).append(nodoTxtProduct);
+                    $(fila).append(celdaProduct);
 
-                $(celdaQuantity).append(nodoTxtQuantity);
-                $(fila).append(celdaQuantity);
+                    $(celdaQuantity).append(nodoTxtQuantity);
+                    $(fila).append(celdaQuantity);
 
-                $(celdaPrice).append(nodoTxtPrice);
-                $(fila).append(celdaPrice);
+                    $(celdaPrice).append(nodoTxtPrice);
+                    $(fila).append(celdaPrice);
 
-                $(tbobyProducts).append(fila);
+                    $(tbobyProducts).append(fila);
 
-                totalproducts += parseInt(product.quantity);
-            });
-            globalQuantity = totalproducts;
-            //console.log("Total de productos en el carrito: ",globalQuantity);
-            localStorage.setItem("QuantityProduct", globalQuantity);
-            document.getElementById("badge").innerHTML = globalQuantity;
-            document.getElementById("badge-tablets").innerHTML = globalQuantity;
-            document.getElementById("badge-aerosoles").innerHTML = globalQuantity;
-            document.getElementById("badge-dif").innerHTML = globalQuantity;
-            document.getElementById("badge-sachet").innerHTML = globalQuantity;
-            document.getElementById("badge-res").innerHTML = globalQuantity;
-            }//if 
+                    totalproducts += parseInt(product.quantity);
+                });
+                globalQuantity = totalproducts;
+                //console.log("Total de productos en el carrito: ",globalQuantity);
+                localStorage.setItem("QuantityProduct", globalQuantity);
+                document.getElementById("badge").innerHTML = globalQuantity;
+                document.getElementById("badge-tablets").innerHTML = globalQuantity;
+                document.getElementById("badge-aerosoles").innerHTML = globalQuantity;
+                document.getElementById("badge-dif").innerHTML = globalQuantity;
+                document.getElementById("badge-sachet").innerHTML = globalQuantity;
+                document.getElementById("badge-res").innerHTML = globalQuantity;
+            }//if
         },
         error: function(error) {
             console.log('error getting the info from the cart ', error);
