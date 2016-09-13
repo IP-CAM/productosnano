@@ -293,10 +293,11 @@ function getResume() {
                 globalTotalMoney = (data.totals[2].text);
                 var totalNull = function(){
                     if(globalTotalMoney !== undefined){
-                        globalTotalMoney = 0;
+                        globalQuantity = 0;
                     }
-                    return globalTotalMoney;
+                    return globalQuantity;
                 }
+                totalNull();
                 
                 //ya la estoy guardando 
                 localStorage.setItem("totalPrice", globalTotalMoney);
@@ -612,7 +613,7 @@ $("#down-back-resumen").click(function() {
     $("#divDifusores").show();
 });
 
-//toggle dropdown
+/*toggle dropdown
 $("#toggle-baby").click(function(){
     $( "#table-toggle-baby" ).fadeToggle(2000)
 });
@@ -642,4 +643,4 @@ $("#toggle-Sansalo").click(function(){
 });
 $("#toggle-Vainilla").click(function(){
     $( "#table-toggle-Vainilla" ).fadeToggle(2000)
-});
+});*/
