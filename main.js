@@ -66,25 +66,27 @@ var getLocalStorage = function() {
             document.getElementById(field.idField).value = field.value;
         });
     }
+    if(storageQuantity){
+        storageQuantity = localStorage.getItem("QuantityProduct");
+        document.getElementById("badge").innerHTML = storageQuantity;
+        document.getElementById("badge-tablets").innerHTML = storageQuantity;
+        document.getElementById("badge-aerosoles").innerHTML = storageQuantity;
+        document.getElementById("badge-dif").innerHTML = storageQuantity;
+        document.getElementById("badge-res").innerHTML = storageQuantity;
+        document.getElementById("badge-sachet").innerHTML = storageQuantity;
+        storageTotalPrice = localStorage.getItem("totalPrice");
+        document.getElementById("price").innerHTML = storageTotalPrice;
+        document.getElementById("price-tablets").innerHTML = storageTotalPrice;
+        document.getElementById("price-aerosoles").innerHTML = storageTotalPrice;
+        document.getElementById("price-dif").innerHTML = storageTotalPrice;
+        document.getElementById("price-res").innerHTML = storageTotalPrice;
+        document.getElementById("price-sachet").innerHTML = storageTotalPrice;
 
-    storageQuantity = localStorage.getItem("QuantityProduct");
-    document.getElementById("badge").innerHTML = storageQuantity;
-    document.getElementById("badge-tablets").innerHTML = storageQuantity;
-    document.getElementById("badge-aerosoles").innerHTML = storageQuantity;
-    document.getElementById("badge-dif").innerHTML = storageQuantity;
-    document.getElementById("badge-res").innerHTML = storageQuantity;
-    document.getElementById("badge-sachet").innerHTML = storageQuantity;
-    storageTotalPrice = localStorage.getItem("totalPrice");
-    document.getElementById("price").innerHTML = storageTotalPrice;
-    document.getElementById("price-tablets").innerHTML = storageTotalPrice;
-    document.getElementById("price-aerosoles").innerHTML = storageTotalPrice;
-    document.getElementById("price-dif").innerHTML = storageTotalPrice;
-    document.getElementById("price-res").innerHTML = storageTotalPrice;
-    document.getElementById("price-sachet").innerHTML = storageTotalPrice;
-
-    //fill out the resume table from the data of local storage
-     var resumenStorage = JSON.parse(localStorage.getItem("resumen"));
-    console.log('resumen que viene del localstorage ',resumenStorage);
+        //fill out the resume table from the data of local storage
+        var resumenStorage = JSON.parse(localStorage.getItem("resumen"));
+        console.log('resumen que viene del localstorage ',resumenStorage);
+    }
+    
 
     if(resumenStorage){
         tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
@@ -288,14 +290,17 @@ function getResume() {
             globalSubTotal = (data.totals[0].text);
             globalImpuesto = (data.totals[1].text);
             globalTotalMoney = (data.totals[2].text);
+            //ya la estoy guardando 
             localStorage.setItem("totalPrice", globalTotalMoney);
             console.log(globalTotalMoney);
+
             document.getElementById("price").innerHTML = globalTotalMoney;
             document.getElementById("price-tablets").innerHTML = globalTotalMoney;
             document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
             document.getElementById("price-sachet").innerHTML = globalTotalMoney;
             document.getElementById("price-dif").innerHTML = globalTotalMoney;
             document.getElementById("price-res").innerHTML = globalTotalMoney;
+
             //llenar las tablas del resumen.
             data.totals.map(function(total) {
                 console.log('Map of resume');
@@ -315,7 +320,7 @@ function getResume() {
                 $(fila).append(celdaMonto);
                 $(tbobyMoney).append(fila);
             });
-            //limpiar el array para que no acumule datos inecesarios
+            //limpiar el array para que no acumule datos 
             resumeData = [];
             data.products.map(function(product) {
                 console.log('Map of products');
@@ -334,11 +339,6 @@ function getResume() {
                 var celdaProduct = document.createElement('td');
                 var celdaQuantity = document.createElement('td');
                 var celdaPrice = document.createElement('td');
-
-                 /*localStorage.setItem("nameOfProduct", product.name);
-                localStorage.setItem("quantityOfProduct", product.quantity);
-                localStorage.setItem("priceOfProduct", product.price);
-                //console.log(localStorage.getItem('nameOfProduct'));*/
                 
                 var nodoTxtProduct = document.createTextNode(product.name);
                 var nodoTxtQuantity = document.createTextNode(product.quantity);
@@ -371,8 +371,6 @@ function getResume() {
             console.log('error getting the info from the cart ', error);
         }
     });
-    return globalQuantity;
-    return globalTotalMoney;
 }
 /**
  * [compareData compare the api data  to the local storage for sync]
