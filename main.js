@@ -60,7 +60,7 @@ var resumeData = [];
 var getLocalStorage = function() {
     //show the local storage in the inputs
     var storageData = JSON.parse(localStorage.getItem("InputsValues"));
-    console.log('datos traidos del local storage: ', storageData);
+    //console.log('datos traidos del local storage: ', storageData);
     if (storageData !== null && storageData !== undefined &&  storageData !== NaN &&  storageData !== 0 &&  storageData !== ""  ){
         storageData.map(function(field) {
             document.getElementById(field.idField).value = field.value;
@@ -84,7 +84,7 @@ var getLocalStorage = function() {
 
         //fill out the resume table from the data of local storage
         var resumenStorage = JSON.parse(localStorage.getItem("resumen"));
-        console.log('resumen que viene del localstorage ',resumenStorage);
+        //console.log('resumen que viene del localstorage ',resumenStorage);
     }
     
 
@@ -92,10 +92,8 @@ var getLocalStorage = function() {
         tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
         tbobyProducts.innerHTML = "";
         resumenStorage.map(function(Object) {
-            
-            
-                console.log('Map of resume from localstorage');
-                console.log('%%%', resumenStorage);
+                //console.log('Map of resume from localstorage');
+                //console.log('%%%', resumenStorage);
                 var fila = document.createElement('tr');
                 var celdaNameOfProduct = document.createElement('td');
                 var celdaQuantityByProduct = document.createElement('td');
@@ -163,7 +161,7 @@ function decrementInput(idField) {
  * @return {[none]}
  */
 function plusClick(inputId, aroma, producId, currentField, aromaId, aromaT, idAromaT) {
-    console.log('entra a funcion plusclick');
+    //console.log('entra a funcion plusclick');
     incrementInput(currentField);
     //console.log('inputId: ',inputId);
     //console.log('cantidad producto: ',document.getElementById(currentField).value);
@@ -189,16 +187,16 @@ function plusClick(inputId, aroma, producId, currentField, aromaId, aromaT, idAr
         data: productApi,
         success: function(data) {
             //console.log('success adding product to cart by input');
-            console.log(data);
+            //console.log(data);
             getResume();
             var indexFound = productExist(currentField);
             //console.log('$#$#$# ',indexFound);
             if (indexFound == -1) {
                 dataLocalStorage.push(productLsObject);
-                console.log('agrego btn mas');
+                //console.log('agrego btn mas');
             } else {
                 dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
-                console.log('actualizo btn mas');
+                //console.log('actualizo btn mas');
             }
             localStorage.setItem("InputsValues", JSON.stringify(dataLocalStorage));
         },
@@ -225,7 +223,7 @@ function productExist(currentField) {
  * @param  {[string]} productKey [key from the product for edit the cart]
  */
 function minusClick(inputId, currentField, productKey) {
-    console.log('entra a funcion minusclick');
+    //console.log('entra a funcion minusclick');
     decrementInput(currentField);
     //console.log('inputId: ',inputId);
     //console.log('cantidad producto para editar: ',document.getElementById(idField).value);
@@ -239,7 +237,7 @@ function minusClick(inputId, currentField, productKey) {
         idField: currentField, //key product
         value: document.getElementById(currentField).value
     };
-    console.log('update data local storage: ', newDataProduct);
+    //console.log('update data local storage: ', newDataProduct);
 
     productEdit = JSON.parse(productDataForEdit);
     //console.log(productEdit);
@@ -250,16 +248,16 @@ function minusClick(inputId, currentField, productKey) {
         dataType: 'json',
         data: productEdit,
         success: function(data) {
-            console.log(data);
+            //console.log(data);
             getResume();
             var indexFound = productExist(currentField);
             console.log(' UPDATE ', indexFound);
             if (indexFound == -1) {
                 dataLocalStorage.push(newDataProduct);
-                console.log('agrego en el btn menos');
+                //console.log('agrego en el btn menos');
             } else {
                 dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
-                console.log('actualizo en el btn menos');
+                //console.log('actualizo en el btn menos');
             }
             localStorage.setItem("InputsValues", JSON.stringify(dataLocalStorage));
         },
@@ -297,7 +295,7 @@ function getResume() {
                 
                 //ya la estoy guardando 
                 localStorage.setItem("totalPrice", globalTotalMoney);
-                console.log(globalTotalMoney);
+                //console.log(globalTotalMoney);
 
                 document.getElementById("price").innerHTML = globalTotalMoney;
                 document.getElementById("price-tablets").innerHTML = globalTotalMoney;
@@ -307,7 +305,7 @@ function getResume() {
                 document.getElementById("price-res").innerHTML = globalTotalMoney;
                 //llenar las tablas del resumen.
                 data.totals.map(function(total) {
-                    console.log('Map of resume');
+                    //console.log('Map of resume');
                     var fila = document.createElement('tr');
                     var celdaDetalle = document.createElement('td');
                     var celdaMonto = document.createElement('td');
@@ -327,8 +325,8 @@ function getResume() {
                 //limpiar el array para que no acumule datos 
                 resumeData = [];
                 data.products.map(function(product) {
-                    console.log('Map of products');
-                    console.log('%%%', product);
+                    //console.log('Map of products');
+                    //console.log('%%%', product);
 
                     var dataForLocalStorageResume ={
                         name: product.name,
@@ -336,7 +334,7 @@ function getResume() {
                         quantity: product.quantity
                     }
                     resumeData.push(dataForLocalStorageResume);
-                    console.log('objeto para el resumen ',resumeData);
+                    //console.log('objeto para el resumen ',resumeData);
                     localStorage.setItem("resumen", JSON.stringify(resumeData));
 
                     var fila = document.createElement('tr');
@@ -387,7 +385,7 @@ function compareData() {
         tbobyMoney = document.querySelector('#tbl-resumen tbody');
         tbobyProducts.innerHTML = "";
         tbobyProducts.innerHTML = "";
-        console.log('Hidden del modal se activo en compareData');
+        //console.log('Hidden del modal se activo en compareData');
 
         jQuery.ajax({
             url: 'http://www.productosnano.com/index.php?route=api/cart/products',
@@ -396,9 +394,9 @@ function compareData() {
             success: function(data) {
                 if (data.products.length > 0) {
                     if (data.totals[2].text == storageTotalPrice) {
-                        console.log('los precios y la cantdad del carrito y el modal son iguales');
+                        //console.log('los precios y la cantdad del carrito y el modal son iguales');
                         data.products.map(function(product) {
-                            console.log('map del modal de cuando son iguales');
+                            //console.log('map del modal de cuando son iguales');
 
                             var fila = document.createElement('tr');
                             var celdaProduct = document.createElement('td');
@@ -437,9 +435,9 @@ function compareData() {
                         }); //map
                     } else {
                         //precios
-                        console.log('los precios y la cantidad del carrito y el modal NO SON IGUALES');
+                        //console.log('los precios y la cantidad del carrito y el modal NO SON IGUALES');
                         globalTotalMoney = data.totals[2].text;
-                        console.log('nuevo precio al comparar: ' + globalTotalMoney);
+                        //console.log('nuevo precio al comparar: ' + globalTotalMoney);
                         document.getElementById("price").innerHTML = globalTotalMoney;
                         document.getElementById("price-tablets").innerHTML = globalTotalMoney;
                         document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
@@ -450,7 +448,7 @@ function compareData() {
 
                         //map para recorrer data. products y obtener la cantidad de productos
                         data.products.map(function(product) {
-                            console.log('map del modal de cuando no son iguales');
+                            //console.log('map del modal de cuando no son iguales');
                             var fila = document.createElement('tr');
                             var celdaProduct = document.createElement('td');
                             var celdaQuantity = document.createElement('td');
@@ -489,7 +487,7 @@ function compareData() {
                             $(tbobyMoney).append(fila);
                         }); //map
                         globalQuantity = totalproducts;
-                        console.log('nueva cantidad de productos: ' + globalQuantity);
+                        //console.log('nueva cantidad de productos: ' + globalQuantity);
                         //actualizar local storage con el api
                         document.getElementById("badge").innerHTML = globalQuantity;
                         document.getElementById("badge-tablets").innerHTML = globalQuantity;
@@ -500,8 +498,8 @@ function compareData() {
                         localStorage.setItem("QuantityProduct", globalQuantity);
                     } //else
                 }
-                console.log('success trayendo datos para comparar');
-                console.log(data);
+                //console.log('success trayendo datos para comparar');
+                //console.log(data);
 
             },
             error: function(error) {
@@ -608,6 +606,8 @@ $("#down-back-resumen").click(function() {
     hideEverythingTwice();
     $("#divDifusores").show();
 });
+
+
 
 /*toggle dropdown
 $("#toggle-baby").click(function(){
