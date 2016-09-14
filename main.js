@@ -290,14 +290,10 @@ function getResume() {
             if(data !== null && data !== undefined &&  data !== NaN &&  data !== 0 &&  data !== ""  ){
                 globalSubTotal = (data.totals[0].text);
                 globalImpuesto = (data.totals[1].text);
-                globalTotalMoney = (data.totals[2].text);
-                var totalNull = function(){
-                    if(globalTotalMoney !== undefined){
-                        globalQuantity = 0;
-                    }
-                    return globalQuantity;
-                }
-                totalNull();
+               
+               //if
+                globalTotalMoney = data.totals[2] ? (data.totals[2].text) : 0;
+                globalQuantity = globalTotalMoney ? globalTotalMoney : 0;
                 
                 //ya la estoy guardando 
                 localStorage.setItem("totalPrice", globalTotalMoney);
