@@ -1,0 +1,420 @@
+
+
+                <tr>
+                    <td class='tabls-tittle'>Lapa</td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Baby</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="baby-D-Lapa" type="button" onclick="minusClick('baby-D-Lapa','baby-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU2NyI7fX0=')"> - </button>
+                                        <input name="baby-D-Lapa" value="0" class="inputstabls" type="text" id="baby-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="baby-D-Lapa" type="button" onclick="plusClick('baby-D-Lapa','1667','279','baby-D-Lapa-input','557','1567','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Bouquet</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Bouquet-D-Lapa" type="button" onclick="minusClick('Bouquet-D-Lapa','Bouquet-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU3NCI7fX0=')"> - </button>
+                                        <input name="Bouquet-D-Lapa" value="0" class="inputstabls" type="text" id="Bouquet-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Bouquet-D-Lapa" type="button" onclick="plusClick('Bouquet-D-Lapa','1667','279','Bouquet-D-Lapa-input','557','1574','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Floral</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Floral-D-Lapa" type="button" onclick="minusClick('Floral-D-Lapa','Floral-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU2OSI7fX0=')"> - </button>
+                                        <input name="Floral-D-Lapa" value="0" class="inputstabls" type="text" id="Floral-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Floral-D-Lapa" type="button" onclick="plusClick('Floral-D-Lapa','1667','279','Floral-D-Lapa-input','557','1569','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Fresa</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Fresa-D-Lapa" type="button" onclick="minusClick('Fresa-D-Lapa','Fresa-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU2NiI7fX0=')"> - </button>
+                                        <input name="Fresa-D-Lapa" value="0" class="inputstabls" type="text" id="Fresa-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Fresa-D-Lapa" type="button" onclick="plusClick('Fresa-D-Lapa','1667','279','Fresa-D-Lapa-input','557','1566','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Lavanda</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Lavanda-D-Lapa" type="button" onclick="minusClick('Lavanda-D-Lapa','Lavanda-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU3MCI7fX0=')"> - </button>
+                                        <input name="Lavanda-D-Lapa" value="0" class="inputstabls" type="text" id="Lavanda-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Lavanda-D-Lapa" type="button" onclick="plusClick('Lavanda-D-Lapa','1667','279','Lavanda-D-Lapa-input','557','1570','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Magnolia</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Magnolia-D-Lapa" type="button" onclick="minusClick('Magnolia-D-Lapa','Magnolia-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU2OCI7fX0=')"> - </button>
+                                        <input name="Magnolia-D-Lapa" value="0" class="inputstabls" type="text" id="Magnolia-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Magnolia-D-Lapa" type="button" onclick="plusClick('Magnolia-D-Lapa','1667','279','Magnolia-D-Lapa-input','557','1568','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Melocotón</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Melocoton-D-Lapa" type="button" onclick="minusClick('Melocoton-D-Lapa','Melocoton-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU3MSI7fX0=')"> - </button>
+                                        <input name="Melocoton-D-Lapa" value="0" class="inputstabls" type="text" id="Melocoton-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Melocoton-D-Lapa" type="button" onclick="plusClick('Melocoton-D-Lapa','1667','279','Melocoton-D-Lapa-input','557','1571','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sándalo</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Sansalo-D-Lapa" type="button" onclick="minusClick('Sansalo-D-Lapa','Sansalo-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU3MiI7fX0=')"> - </button>
+                                        <input name="Sansalo-D-Lapa" value="0" class="inputstabls" type="text" id="Sansalo-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Sansalo-D-Lapa" type="button" onclick="plusClick('Sansalo-D-Lapa','1667','279','Sansalo-D-Lapa-input','557','1572','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Vainilla</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Vainilla-D-Lapa" type="button" onclick="minusClick('Vainilla-D-Lapa','Vainilla-D-Lapa-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjciO2k6NTU2O3M6NDoiMTU3MyI7fX0=')"> - </button>
+                                        <input name="Vainilla-D-Lapa" value="0" class="inputstabls" type="text" id="Vainilla-D-Lapa-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Vainilla-D-Lapa" type="button" onclick="plusClick('Vainilla-D-Lapa','1667','279','Vainilla-D-Lapa-input','557','1573','556')">  + </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class='tabls-tittle'>Tucán</td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Baby</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="baby-D-tucan" type="button" onclick="minusClick('baby-D-tucan-input','baby-D-tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU2NyI7fX0=')"> - </button>
+                                        <input name="baby-D-tucan-input" value="0" class="inputstabls" type="text" id="baby-D-tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="baby-D-tucan-input" type="button" onclick="plusClick('baby-D-tucan','1577','279','baby-D-tucan-input','557','1567','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Bouquet</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Bouquet-D-Tucan" type="button" onclick="minusClick('Bouquet-D-Tucan','Bouquet-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU3NCI7fX0=')"> - </button>
+                                        <input name="Bouquet-D-Tucan" value="0" class="inputstabls" type="text" id="Bouquet-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Bouquet-D-Tucan" type="button" onclick="plusClick('Bouquet-D-Tucan','1577','279','Bouquet-D-Tucan-input','557','1574','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Floral</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Floral-D-Tucan" type="button" onclick="minusClick('Floral-D-Tucan','Floral-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU2OSI7fX0=')"> - </button>
+                                        <input name="Floral-D-Tucan" value="0" class="inputstabls" type="text" id="Floral-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Floral-D-Tucan" type="button" onclick="plusClick('Floral-D-Tucan','1577','279','Floral-D-Tucan-input','557','1569','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Fresa</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Fresa-D-Tucan" type="button" onclick="minusClick('Fresa-D-Tucan','Fresa-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU2NiI7fX0=')"> - </button>
+                                        <input name="Fresa-D-Tucan" value="0" class="inputstabls" type="text" id="Fresa-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Fresa-D-Tucan" type="button" onclick="plusClick('Fresa-D-Tucan','1577','279','Fresa-D-Tucan-input','557','1566','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Lavanda</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Lavanda-D-Tucan" type="button" onclick="minusClick('Lavanda-D-Tucan','Lavanda-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU3MCI7fX0=')"> - </button>
+                                        <input name="Lavanda-D-Tucan" value="0" class="inputstabls" type="text" id="Lavanda-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Lavanda-D-Tucan" type="button" onclick="plusClick('Lavanda-D-Tucan','1577','279','Lavanda-D-Tucan-input','557','1570','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Magnolia</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Magnolia-D-Tucan" type="button" onclick="minusClick('Magnolia-D-Tucan','Magnolia-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU2OCI7fX0=')"> - </button>
+                                        <input name="Magnolia-D-Tucan" value="0" class="inputstabls" type="text" id="Magnolia-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Magnolia-D-Tucan" type="button" onclick="plusClick('Magnolia-D-Tucan','1577','279','Magnolia-D-Tucan-input','557','1568','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Melocotón</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Melocoton-D-Tucan" type="button" onclick="minusClick('Melocoton-D-Tucan','Melocoton-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU3MSI7fX0=')"> - </button>
+                                        <input name="Melocoton-D-Tucan" value="0" class="inputstabls" type="text" id="Melocoton-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Melocoton-D-Tucan" type="button" onclick="plusClick('Melocoton-D-Tucan','1577','279','Melocoton-D-Tucan-input','557','1571','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sándalo</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Sansalo-D-Tucan" type="button" onclick="minusClick('Sansalo-D-Tucan','Sansalo-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU3MiI7fX0=')"> - </button>
+                                        <input name="Sansalo-D-Tucan" value="0" class="inputstabls" type="text" id="Sansalo-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Sansalo-D-Tucan" type="button" onclick="plusClick('Sansalo-D-Tucan','1577','279','Sansalo-D-Tucan-input','557','1572','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Vainilla</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Vainilla-D-Tucan" type="button" onclick="minusClick('Vainilla-D-Tucan','Vainilla-D-Tucan-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE1NzciO2k6NTU2O3M6NDoiMTU3MyI7fX0=')"> - </button>
+                                        <input name="Vainilla-D-Tucan" value="0" class="inputstabls" type="text" id="Vainilla-D-Tucan-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Vainilla-D-Tucan" type="button" onclick="plusClick('Vainilla-D-Tucan','1577','279','Vainilla-D-Tucan-input','557','1573','556')">  + </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class='tabls-tittle'>Rana hippy</td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Baby</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="baby-D-ranaH" type="button" onclick="minusClick('baby-D-ranaH','baby-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU2NyI7fX0=')"> - </button>
+                                        <input name="baby-D-ranaH-input" value="0" class="inputstabls" type="text" id="baby-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="baby-D-ranaH-input" type="button" onclick="plusClick('baby-D-ranaH','1665','279','baby-D-ranaH-input','557','1567','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Bouquet</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Bouquet-D-ranaH" type="button" onclick="minusClick('Bouquet-D-ranaH','Bouquet-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU3NCI7fX0=')"> - </button>
+                                        <input name="Bouquet-D-ranaH" value="0" class="inputstabls" type="text" id="Bouquet-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Bouquet-D-ranaH" type="button" onclick="plusClick('Bouquet-D-ranaH','1665','279','Bouquet-D-ranaH-input','557','1574','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Floral</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Floral-D-ranaH" type="button" onclick="minusClick('Floral-D-ranaH','Floral-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU2OSI7fX0=')"> - </button>
+                                        <input name="Floral-D-ranaH" value="0" class="inputstabls" type="text" id="Floral-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Floral-D-ranaH" type="button" onclick="plusClick('Floral-D-ranaH','1665','279','Floral-D-ranaH-input','557','1569','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Fresa</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Fresa-D-ranaH" type="button" onclick="minusClick('Fresa-D-ranaH','Fresa-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU2NiI7fX0=')"> - </button>
+                                        <input name="Fresa-D-ranaH" value="0" class="inputstabls" type="text" id="Fresa-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Fresa-D-ranaH" type="button" onclick="plusClick('Fresa-D-ranaH','1665','279','Fresa-D-ranaH-input','557','1566','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Lavanda</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Lavanda-D-ranaH" type="button" onclick="minusClick('Lavanda-D-ranaH','Lavanda-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU3MCI7fX0=')"> - </button>
+                                        <input name="Lavanda-D-ranaH" value="0" class="inputstabls" type="text" id="Lavanda-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Lavanda-D-ranaH" type="button" onclick="plusClick('Lavanda-D-ranaH','1665','279','Lavanda-D-ranaH-input','557','1570','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Magnolia</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Magnolia-D-ranaH" type="button" onclick="minusClick('Magnolia-D-ranaH','Magnolia-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU2OCI7fX0=')"> - </button>
+                                        <input name="Magnolia-D-ranaH" value="0" class="inputstabls" type="text" id="Magnolia-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Magnolia-D-ranaH" type="button" onclick="plusClick('Magnolia-D-ranaH','1665','279','Magnolia-D-ranaH-input','557','1568','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Melocotón</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Melocoton-D-ranaH" type="button" onclick="minusClick('Melocoton-D-ranaH','Melocoton-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU3MSI7fX0=')"> - </button>
+                                        <input name="Melocoton-D-ranaH" value="0" class="inputstabls" type="text" id="Melocoton-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Melocoton-D-ranaH" type="button" onclick="plusClick('Melocoton-D-ranaH','1665','279','Melocoton-D-ranaH-input','557','1571','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sándalo</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Sansalo-D-ranaH" type="button" onclick="minusClick('Sansalo-D-ranaH','Sansalo-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU3MiI7fX0=')"> - </button>
+                                        <input name="Sansalo-D-ranaH" value="0" class="inputstabls" type="text" id="Sansalo-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Sansalo-D-ranaH" type="button" onclick="plusClick('Sansalo-D-ranaH','1665','279','Sansalo-D-ranaH-input','557','1572','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Vainilla</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Vainilla-D-ranaH" type="button" onclick="minusClick('Vainilla-D-ranaH','Vainilla-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU3MyI7fX0=')"> - </button>
+                                        <input name="Vainilla-D-ranaH" value="0" class="inputstabls" type="text" id="Vainilla-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Vainilla-D-ranaH" type="button" onclick="plusClick('Vainilla-D-ranaH','1665','279','Vainilla-D-ranaH-input','557','1573','556')">  + </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class='tabls-tittle'>Rana</td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Baby</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="baby-D-rana" type="button" onclick="minusClick('baby-D-rana','baby-D-rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU2NyI7fX0=')"> - </button>
+                                        <input name="baby-D-rana" value="0" class="inputstabls" type="text" id="baby-D-rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="baby-D-rana" type="button" onclick="plusClick('baby-D-rana','1666','279','baby-D-rana-input','557','1567','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Bouquet</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Bouquet-D-Rana" type="button" onclick="minusClick('Bouquet-D-Rana','Bouquet-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU3NCI7fX0=')"> - </button>
+                                        <input name="Bouquet-D-Rana" value="0" class="inputstabls" type="text" id="Bouquet-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Bouquet-D-Rana" type="button" onclick="plusClick('Bouquet-D-Rana','1666','279','Bouquet-D-Rana-input','557','1574','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Floral</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Floral-D-Rana" type="button" onclick="minusClick('Floral-D-Rana','Floral-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU2OSI7fX0=')"> - </button>
+                                        <input name="Floral-D-Rana" value="0" class="inputstabls" type="text" id="Floral-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Floral-D-Rana" type="button" onclick="plusClick('Floral-D-Rana','1666','279','Floral-D-Rana-input','557','1569','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Fresa</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Fresa-D-Rana" type="button" onclick="minusClick('Fresa-D-Rana','Fresa-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU2NiI7fX0=')"> - </button>
+                                        <input name="Fresa-D-Rana" value="0" class="inputstabls" type="text" id="Fresa-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Fresa-D-Rana" type="button" onclick="plusClick('Fresa-D-Rana','1666','279','Fresa-D-Rana-input','557','1566','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Lavanda</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Lavanda-D-Rana" type="button" onclick="minusClick('Lavanda-D-Rana','Lavanda-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU3MCI7fX0=')"> - </button>
+                                        <input name="Lavanda-D-Rana" value="0" class="inputstabls" type="text" id="Lavanda-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Lavanda-D-Rana" type="button" onclick="plusClick('Lavanda-D-Rana','1666','279','Lavanda-D-Rana-input','557','1570','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Magnolia</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Magnolia-D-Rana" type="button" onclick="minusClick('Magnolia-D-Rana','Magnolia-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU2OCI7fX0=')"> - </button>
+                                        <input name="Magnolia-D-Rana" value="0" class="inputstabls" type="text" id="Magnolia-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Magnolia-D-Rana" type="button" onclick="plusClick('Magnolia-D-Rana','1666','279','Magnolia-D-Rana-input','557','1568','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Melocotón</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Melocoton-D-Rana" type="button" onclick="minusClick('Melocoton-D-Rana','Melocoton-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU3MSI7fX0=')"> - </button>
+                                        <input name="Melocoton-D-Rana" value="0" class="inputstabls" type="text" id="Melocoton-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Melocoton-D-Rana" type="button" onclick="plusClick('Melocoton-D-Rana','1666','279','Melocoton-D-Rana-input','557','1571','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sándalo</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Sansalo-D-ranaH" type="button" onclick="minusClick('Sansalo-D-ranaH','Sansalo-D-ranaH-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjUiO2k6NTU2O3M6NDoiMTU3MiI7fX0=')"> - </button>
+                                        <input name="Sansalo-D-ranaH" value="0" class="inputstabls" type="text" id="Sansalo-D-ranaH-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Sansalo-D-ranaH" type="button" onclick="plusClick('Sansalo-D-ranaH','1665','279','Sansalo-D-ranaH-input','557','1572','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Vainilla</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Vainilla-D-Rana" type="button" onclick="minusClick('Vainilla-D-Rana','Vainilla-D-Rana-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjYiO2k6NTU2O3M6NDoiMTU3MyI7fX0=')"> - </button>
+                                        <input name="Vainilla-D-Rana" value="0" class="inputstabls" type="text" id="Vainilla-D-Rana-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Vainilla-D-Rana" type="button" onclick="plusClick('Vainilla-D-Rana','1666','279','Vainilla-D-Rana-input','557','1573','556')">  + </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class='tabls-tittle'>Oso perezoso</td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Baby</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="baby-D-Oso" type="button" onclick="minusClick('baby-D-Oso','baby-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU2NyI7fX0=')"> - </button>
+                                        <input name="baby-D-Oso" value="0" class="inputstabls" type="text" id="baby-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="baby-D-Oso" type="button" onclick="plusClick('baby-D-Oso','1664','279','baby-D-Oso-input','557','1567','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Bouquet</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Bouquet-D-Oso" type="button" onclick="minusClick('Bouquet-D-Oso','Bouquet-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU3NCI7fX0=')"> - </button>
+                                        <input name="Bouquet-D-Oso" value="0" class="inputstabls" type="text" id="Bouquet-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="BouquetBouquet-D-Oso" type="button" onclick="plusClick('Bouquet-D-Oso','1664','279','Bouquet-D-Oso-input','557','1574','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Floral</th>
+                                    <td>
+                                        <button value="-" class="qtytablets btn btn-default" field="Floral-D-Oso" type="button" onclick="minusClick('Floral-D-Oso','Floral-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU2OSI7fX0=')"> - </button>
+                                        <input name="Floral-D-Oso" value="0" class="inputstabls" type="text" id="Floral-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Floral-D-Oso" type="button" onclick="plusClick('Floral-D-Oso','1664','279','Floral-D-Oso-input','557','1569','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Fresa</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Fresa-D-Oso" type="button" onclick="minusClick('Fresa-D-Oso','Fresa-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU2NiI7fX0=')"> - </button>
+                                        <input name="Fresa-D-Oso" value="0" class="inputstabls" type="text" id="Fresa-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Fresa-D-Oso" type="button" onclick="plusClick('Fresa-D-Oso','1664','279','Fresa-D-Oso-input','557','1566','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Lavanda</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Lavanda-D-Oso" type="button" onclick="minusClick('Lavanda-D-Oso','Lavanda-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU3MCI7fX0=')"> - </button>
+                                        <input name="Lavanda-D-Oso" value="0" class="inputstabls" type="text" id="Lavanda-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Lavanda-D-Oso" type="button" onclick="plusClick('Lavanda-D-Oso','1664','279','Lavanda-D-Oso-input','557','1570','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Magnolia</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Magnolia-D-Oso" type="button" onclick="minusClick('Magnolia-D-Oso','Magnolia-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU2OCI7fX0=')"> - </button>
+                                        <input name="Magnolia-D-Oso" value="0" class="inputstabls" type="text" id="Magnolia-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Magnolia-D-Oso" type="button" onclick="plusClick('Magnolia-D-Oso','1664','279','Magnolia-D-Oso-input','557','1568','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Melocotón</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Melocoton-D-Oso" type="button" onclick="minusClick('Melocoton-D-Oso','Melocoton-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU3MSI7fX0=')"> - </button>
+                                        <input name="Melocoton-D-Oso" value="0" class="inputstabls" type="text" id="Melocoton-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Melocoton-D-Oso" type="button" onclick="plusClick('Melocoton-D-Oso','1664','279','Melocoton-D-Oso-input','557','1571','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Sándalo</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Sansalo-D-Oso" type="button" onclick="minusClick('Sansalo-D-Oso','Sansalo-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU3MiI7fX0=')"> - </button>
+                                        <input name="Sansalo-D-Oso" value="0" class="inputstabls" type="text" id="Sansalo-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Sansalo-D-Oso" type="button" onclick="plusClick('Sansalo-D-Oso','1664','279','Sansalo-D-Oso-input','557','1572','556')">  + </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Vainilla</th>
+                                    <td class="td-tablets">
+                                        <button value="-" class="qtytablets btn btn-default" field="Vainilla-D-Oso" type="button" onclick="minusClick('Vainilla-D-Oso','Vainilla-D-Oso-input','YToyOntzOjEwOiJwcm9kdWN0X2lkIjtpOjI3OTtzOjY6Im9wdGlvbiI7YToyOntpOjU1NztzOjQ6IjE2NjQiO2k6NTU2O3M6NDoiMTU3MyI7fX0=')"> - </button>
+                                        <input name="Vainilla-D-Oso" value="0" class="inputstabls" type="text" id="Vainilla-D-Oso-input">
+                                        <button value="+" class="qtytablets btn btn-default" field="Vainilla-D-Oso" type="button" onclick="plusClick('Vainilla-D-Oso','1664','279','Vainilla-D-Oso-input','557','1573','556')">  + </button>
+                                    </td>
+                                </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            </td>
+            </tr>
+
+            </td>
+            </table>
+            <button class="btn btn-primary pull-right" id="down-next-tabletas" type="button">Siguiente</button>
+            <button class="btn btn-primary pull-left" id="down-back-tabletas" type="button">Atrás</button>
+            <br>
+        </div>
