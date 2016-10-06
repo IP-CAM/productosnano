@@ -1,6 +1,12 @@
 /**
  * Javascript inyected
  */
+Query(document).ready(function(){ 
+    $('#botonModal').prop("disabled", false); // Element(s) are now enabled.
+    $("#botonModal").removeClass("disabled");
+    console.log('Element(s) are now enabled.');
+)};
+
 localStorage.setItem('javascriptLoaded','no');
 
 $("#botonModal").click(function(){

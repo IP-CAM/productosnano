@@ -3,15 +3,8 @@
  * set in the plus and minus functions, do a log in to be avail to use the api things]
  */
 jQuery(document).ready(function() {
-    var hideEverything = function() {
-        $("#divTabletas").hide();
-        $("#divAerosoles").hide();
-        $("#divSachet").hide();
-        $("#divDifusores").hide();
-        $("#divResumen").hide();
-    }
+   
 
-    hideEverything();
     var loginData = {
         username: 'test',
         password: 'shto33'
@@ -23,8 +16,11 @@ jQuery(document).ready(function() {
         dataType: 'json',
         data: loginData,
         success: function(data) {
-            //console.log('success');
-            //console.log(data);
+            $("#divTabletas").hide();
+            $("#divAerosoles").hide();
+            $("#divSachet").hide();
+            $("#divDifusores").hide();
+            $("#divResumen").hide();
         },
         error: function(error) {
             console.log('error: ', error);
@@ -51,7 +47,10 @@ var getLocalStorage = function() {
     //console.log('datos traidos del local storage: ', storageData);
     if (storageData !== null && storageData !== undefined &&  storageData !== NaN &&  storageData !== 0 &&  storageData !== ""  ){
         storageData.map(function(field) {
-            document.getElementById(field.idField).value = field.value;
+            console.log("field: ",document.getElementById(field.idField));
+            if(document.getElementById(field.idField).value){
+                    document.getElementById(field.idField).value = field.value;
+                }
         });
     }
     if(storageQuantity){
@@ -594,4 +593,3 @@ $("#down-back-resumen").click(function() {
     hideEverythingTwice();
     $("#divDifusores").show();
 });
-
