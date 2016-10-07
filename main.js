@@ -3,9 +3,7 @@
  * set in the plus and minus functions, do a log in to be avail to use the api things]
  */
 jQuery(document).ready(function() {
-   
-
-    var loginData = {
+   var loginData = {
         username: 'test',
         password: 'shto33'
     }
