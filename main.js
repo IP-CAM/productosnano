@@ -7,26 +7,35 @@ jQuery(document).ready(function() {
         username: 'test',
         password: 'shto33'
     }
-
     jQuery.ajax({
         url: 'http://www.productosnano.com/index.php?route=api/login',
         type: 'POST',
         dataType: 'json',
         data: loginData,
         success: function(data) {
-            $("#divTabletas").hide();
-            $("#divAerosoles").hide();
-            $("#divSachet").hide();
-            $("#divDifusores").hide();
-            $("#divResumen").hide();
+          var storageData = JSON.parse(localStorage.getItem("InputsValues"));
+          console.log('imprime un objeto que tiene el id del input y la cantidad ', storageData);
+          if (storageData == null ) {
+            console.log('Es nulo');
+            console.log(storageData);
+          }else{
+            storageData.map(function(field){
+              console.log('entro al map de cuando NO ES NULO');
+              console.log("field: ",document.getElementById(field.idField));
+              if(document.getElementById(field.idField).value){
+                document.getElementById(field.idField).value = field.value;
+              }
+            });
+          }
         },
         error: function(error) {
             console.log('error: ', error);
         }
     });
-});
+}); //end of j-docready.
 /**
- * @type {number}
+ * [global variables]
+ * @type {Number, Arrays}
  */
 var globalQuantity = 0;
 var globalTotalMoney = 0;
@@ -37,29 +46,19 @@ var storageQuantity;
 var storageTotalPrice;
 var resumeData = [];
 /**
- * [getLocalStorage get the local storage for display]
+ * [ get the local storage for display]
  */
-var getLocalStorage = function() {
+function getLocalStorage() {
     //show the local storage in the inputs
-    var storageData = JSON.parse(localStorage.getItem("InputsValues"));
-    //console.log('datos traidos del local storage: ', storageData);
-    if (storageData !== null && storageData !== undefined &&  storageData !== NaN &&  storageData !== 0 &&  storageData !== ""  ){
-        storageData.map(function(field) {
-            console.log("field: ",document.getElementById(field.idField));
-            if(document.getElementById(field.idField).value){
-                    document.getElementById(field.idField).value = field.value;
-                }
-        });
-    }
     if(storageQuantity){
         storageQuantity = localStorage.getItem("QuantityProduct");
+        storageTotalPrice = localStorage.getItem("totalPrice");
         document.getElementById("badge").innerHTML = storageQuantity;
         document.getElementById("badge-tablets").innerHTML = storageQuantity;
         document.getElementById("badge-aerosoles").innerHTML = storageQuantity;
         document.getElementById("badge-dif").innerHTML = storageQuantity;
         document.getElementById("badge-res").innerHTML = storageQuantity;
         document.getElementById("badge-sachet").innerHTML = storageQuantity;
-        storageTotalPrice = localStorage.getItem("totalPrice");
         document.getElementById("price").innerHTML = storageTotalPrice;
         document.getElementById("price-tablets").innerHTML = storageTotalPrice;
         document.getElementById("price-aerosoles").innerHTML = storageTotalPrice;
@@ -69,21 +68,16 @@ var getLocalStorage = function() {
 
         //fill out the resume table from the data of local storage
         var resumenStorage = JSON.parse(localStorage.getItem("resumen"));
-        //console.log('resumen que viene del localstorage ',resumenStorage);
     }
-    
-
     if(resumenStorage){
         tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
         tbobyProducts.innerHTML = "";
         resumenStorage.map(function(Object) {
-                //console.log('Map of resume from localstorage');
-                //console.log('%%%', resumenStorage);
                 var fila = document.createElement('tr');
                 var celdaNameOfProduct = document.createElement('td');
                 var celdaQuantityByProduct = document.createElement('td');
                 var celdaPriceByProduct = document.createElement('td');
-                
+
                 var nodoNameProduct = document.createTextNode(Object.name);
                 var nodoQuantityByProduct = document.createTextNode(Object.quantity);
                 var nodoPriceByProduct = document.createTextNode(Object.price);
@@ -98,14 +92,14 @@ var getLocalStorage = function() {
                 $(fila).append(celdaPriceByProduct);
 
                 $(tbobyProducts).append(fila);
-        });
+      });
     }
-     
 }
 
+
+
 /**
- * [hideEverythingTwice hide everything outside the document ready]
- * @return {[none]} []
+ * [ hide everything outside the document ready]
  */
 function hideEverythingTwice() {
     $("#divTabletas").hide();
@@ -116,9 +110,8 @@ function hideEverythingTwice() {
     $("#divResumen").hide();
 }
 /**
- * [incrementInput increment the input of the label buttons]
+ * [ increment the input of the label buttons]
  * @param  {[id]} idField [id from the input field to increment]
- * @return {[none]}
  */
 function incrementInput(idField) {
     var actualNumber = parseInt(document.getElementById(idField).value);
@@ -146,11 +139,7 @@ function decrementInput(idField) {
  * @return {[none]}
  */
 function plusClick(inputId, aroma, producId, currentField, aromaId, aromaT, idAromaT) {
-    //console.log('entra a funcion plusclick');
     incrementInput(currentField);
-    //console.log('inputId: ',inputId);
-    //console.log('cantidad producto: ',document.getElementById(currentField).value);
-
     var productData = `{
         "product_id":"` + producId + `",
         "quantity": "1",
@@ -163,25 +152,19 @@ function plusClick(inputId, aroma, producId, currentField, aromaId, aromaT, idAr
     };
 
     productApi = JSON.parse(productData);
-    //console.log('data local storage: ', productLsObject);
 
-    jQuery.ajax({
+  jQuery.ajax({
         url: 'http://www.productosnano.com/index.php?route=api/cart/add',
         type: 'POST',
         dataType: 'json',
         data: productApi,
         success: function(data) {
-            //console.log('success adding product to cart by input');
-            //console.log(data);
             getResume();
             var indexFound = productExist(currentField);
-            //console.log('$#$#$# ',indexFound);
             if (indexFound == -1) {
                 dataLocalStorage.push(productLsObject);
-                //console.log('agrego btn mas');
             } else {
                 dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
-                //console.log('actualizo btn mas');
             }
             localStorage.setItem("InputsValues", JSON.stringify(dataLocalStorage));
         },
@@ -195,10 +178,9 @@ function productExist(currentField) {
     var indexField = -1;
     dataLocalStorage.map(function(arrayfield, i) {
         if (arrayfield.idField === currentField) {
-            //console.log('entro si es igual');
             indexField = i;
         }
-    }); //map
+    });
     return indexField;
 }
 /**
@@ -208,11 +190,7 @@ function productExist(currentField) {
  * @param  {[string]} productKey [key from the product for edit the cart]
  */
 function minusClick(inputId, currentField, productKey) {
-    //console.log('entra a funcion minusclick');
     decrementInput(currentField);
-    //console.log('inputId: ',inputId);
-    //console.log('cantidad producto para editar: ',document.getElementById(idField).value);
-
     var productDataForEdit = `{
             "key":"` + productKey + `",
             "quantity": "` + document.getElementById(currentField).value + `"
@@ -222,27 +200,20 @@ function minusClick(inputId, currentField, productKey) {
         idField: currentField, //key product
         value: document.getElementById(currentField).value
     };
-    //console.log('update data local storage: ', newDataProduct);
-
     productEdit = JSON.parse(productDataForEdit);
-    //console.log(productEdit);
-
     jQuery.ajax({
         url: 'http://www.productosnano.com/index.php?route=api/cart/edit',
         type: 'POST',
         dataType: 'json',
         data: productEdit,
         success: function(data) {
-            //console.log(data);
             getResume();
             var indexFound = productExist(currentField);
             console.log(' UPDATE ', indexFound);
             if (indexFound == -1) {
                 dataLocalStorage.push(newDataProduct);
-                //console.log('agrego en el btn menos');
             } else {
                 dataLocalStorage[indexFound].value = document.getElementById(currentField).value;
-                //console.log('actualizo en el btn menos');
             }
             localStorage.setItem("InputsValues", JSON.stringify(dataLocalStorage));
         },
@@ -267,66 +238,54 @@ function getResume() {
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-            console.log('success getting the info from the cart');
-            //imprimir resultados en el modal
-            console.log(data);
             if(data !== null && data !== undefined &&  data !== NaN &&  data !== 0 &&  data !== ""  ){
                 globalSubTotal = (data.totals[0].text);
                 globalImpuesto = (data.totals[1].text);
-               
+
                //if
                 globalTotalMoney = data.totals[2] ? (data.totals[2].text) : 0;
                 globalQuantity = globalTotalMoney ? globalTotalMoney : 0;
-                
-                //ya la estoy guardando 
                 localStorage.setItem("totalPrice", globalTotalMoney);
-                //console.log(globalTotalMoney);
-
                 document.getElementById("price").innerHTML = globalTotalMoney;
                 document.getElementById("price-tablets").innerHTML = globalTotalMoney;
                 document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
                 document.getElementById("price-sachet").innerHTML = globalTotalMoney;
                 document.getElementById("price-dif").innerHTML = globalTotalMoney;
                 document.getElementById("price-res").innerHTML = globalTotalMoney;
-                //llenar las tablas del resumen.
+
                 data.totals.map(function(total) {
-                    //console.log('Map of resume');
-                    var fila = document.createElement('tr');
-                    var celdaDetalle = document.createElement('td');
-                    var celdaMonto = document.createElement('td');
+                  var fila = document.createElement('tr');
+                  var celdaDetalle = document.createElement('td');
+                  var celdaMonto = document.createElement('td');
 
-                    celdaMonto.setAttribute('id','monto-table');
+                  celdaMonto.setAttribute('id','monto-table');
 
-                    var nodoTxtDetalle = document.createTextNode(total.title);
-                    var nodoTxtMonto = document.createTextNode(total.text);
+                  var nodoTxtDetalle = document.createTextNode(total.title);
+                  var nodoTxtMonto = document.createTextNode(total.text);
 
-                    $(celdaDetalle).append(nodoTxtDetalle);
-                    $(fila).append(celdaDetalle);
+                  $(celdaDetalle).append(nodoTxtDetalle);
+                  $(fila).append(celdaDetalle);
 
-                    $(celdaMonto).append(nodoTxtMonto);
-                    $(fila).append(celdaMonto);
-                    $(tbobyMoney).append(fila);
+                  $(celdaMonto).append(nodoTxtMonto);
+                  $(fila).append(celdaMonto);
+                  $(tbobyMoney).append(fila);
                 });//map
-                //limpiar el array para que no acumule datos 
+
                 resumeData = [];
                 data.products.map(function(product) {
-                    //console.log('Map of products');
-                    //console.log('%%%', product);
-
-                    var dataForLocalStorageResume ={
+                  var dataForLocalStorageResume ={
                         name: product.name,
                         price: product.price,
                         quantity: product.quantity
                     }
                     resumeData.push(dataForLocalStorageResume);
-                    //console.log('objeto para el resumen ',resumeData);
                     localStorage.setItem("resumen", JSON.stringify(resumeData));
 
                     var fila = document.createElement('tr');
                     var celdaProduct = document.createElement('td');
                     var celdaQuantity = document.createElement('td');
                     var celdaPrice = document.createElement('td');
-                    
+
                     var nodoTxtProduct = document.createTextNode(product.name);
                     var nodoTxtQuantity = document.createTextNode(product.quantity);
                     var nodoTxtPrice = document.createTextNode(product.price);
@@ -345,7 +304,6 @@ function getResume() {
                     totalproducts += parseInt(product.quantity);
                 });
                 globalQuantity = totalproducts;
-                //console.log("Total de productos en el carrito: ",globalQuantity);
                 localStorage.setItem("QuantityProduct", globalQuantity);
                 document.getElementById("badge").innerHTML = globalQuantity;
                 document.getElementById("badge-tablets").innerHTML = globalQuantity;
@@ -370,19 +328,14 @@ function compareData() {
         tbobyMoney = document.querySelector('#tbl-resumen tbody');
         tbobyProducts.innerHTML = "";
         tbobyProducts.innerHTML = "";
-        //console.log('Hidden del modal se activo en compareData');
-
-        jQuery.ajax({
+    jQuery.ajax({
             url: 'http://www.productosnano.com/index.php?route=api/cart/products',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
                 if (data.products.length > 0) {
                     if (data.totals[2].text == storageTotalPrice) {
-                        //console.log('los precios y la cantdad del carrito y el modal son iguales');
                         data.products.map(function(product) {
-                            //console.log('map del modal de cuando son iguales');
-
                             var fila = document.createElement('tr');
                             var celdaProduct = document.createElement('td');
                             var celdaQuantity = document.createElement('td');
@@ -403,7 +356,6 @@ function compareData() {
                             $(tbobyProducts).append(fila);
                         }); //map
                         data.totals.map(function(total) {
-                            //console.log('MAP DE LISTA DE RESUMEN');
                             var fila = document.createElement('tr');
                             var celdaDetalle = document.createElement('td');
                             var celdaMonto = document.createElement('td');
@@ -419,10 +371,7 @@ function compareData() {
                             $(tbobyMoney).append(fila);
                         }); //map
                     } else {
-                        //precios
-                        //console.log('los precios y la cantidad del carrito y el modal NO SON IGUALES');
                         globalTotalMoney = data.totals[2].text;
-                        //console.log('nuevo precio al comparar: ' + globalTotalMoney);
                         document.getElementById("price").innerHTML = globalTotalMoney;
                         document.getElementById("price-tablets").innerHTML = globalTotalMoney;
                         document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
@@ -433,7 +382,6 @@ function compareData() {
 
                         //map para recorrer data. products y obtener la cantidad de productos
                         data.products.map(function(product) {
-                            //console.log('map del modal de cuando no son iguales');
                             var fila = document.createElement('tr');
                             var celdaProduct = document.createElement('td');
                             var celdaQuantity = document.createElement('td');
@@ -472,8 +420,6 @@ function compareData() {
                             $(tbobyMoney).append(fila);
                         }); //map
                         globalQuantity = totalproducts;
-                        //console.log('nueva cantidad de productos: ' + globalQuantity);
-                        //actualizar local storage con el api
                         document.getElementById("badge").innerHTML = globalQuantity;
                         document.getElementById("badge-tablets").innerHTML = globalQuantity;
                         document.getElementById("badge-aerosoles").innerHTML = globalQuantity;
@@ -483,9 +429,6 @@ function compareData() {
                         localStorage.setItem("QuantityProduct", globalQuantity);
                     } //else
                 }
-                //console.log('success trayendo datos para comparar');
-                //console.log(data);
-
             },
             error: function(error) {
                     console.log('Error trayendo datos para comparar ', error);
