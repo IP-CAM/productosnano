@@ -3,33 +3,84 @@
  * set in the plus and minus functions, do a log in to be avail to use the api things]
  */
 jQuery(document).ready(function() {
-   var loginData = {
+
+    var loginData = {
         username: 'test',
         password: 'shto33'
     }
+
     jQuery.ajax({
-        url: 'http://www.productosnano.com/index.php?route=api/login',
+        url: 'https://www.productosnano.com/index.php?route=api/login',
         type: 'POST',
         dataType: 'json',
         data: loginData,
         success: function(data) {
-          var storageData = JSON.parse(localStorage.getItem("InputsValues"));
-          console.log('imprime un objeto que tiene el id del input y la cantidad ', storageData);
-          if (storageData == null ) {
-            console.log('Es nulo');
-            console.log(storageData);
-          }else{
-            storageData.map(function(field){
-              console.log('entro al map de cuando NO ES NULO');
-              console.log("field: ",document.getElementById(field.idField));
-              if(document.getElementById(field.idField).value){
-                document.getElementById(field.idField).value = field.value;
-              }
-            });
-          }
-        },
+          console.error("askjdaksjhdbaskdas" , data);
+            var resumenStorage;
+            function getLocalStorage() {
+                var storageData = JSON.parse(localStorage.getItem("InputsValues"));
+
+                if (storageData == null) {
+                    console.log('Storage data is null');
+                } else {
+                    storageData.map(function(field) {
+                        if (document.getElementById(field.idField).value) {
+                            document.getElementById(field.idField).value = field.value;
+                        }
+                    });
+                }
+                //show the local storage in the inputs
+                if (storageQuantity) {
+                    storageQuantity = localStorage.getItem("QuantityProduct");
+                    storageTotalPrice = localStorage.getItem("totalPrice");
+                    document.getElementById("badge").innerHTML = storageQuantity;
+                    document.getElementById("badge-tablets").innerHTML = storageQuantity;
+                    document.getElementById("badge-aerosoles").innerHTML = storageQuantity;
+                    document.getElementById("badge-dif").innerHTML = storageQuantity;
+                    document.getElementById("badge-res").innerHTML = storageQuantity;
+                    document.getElementById("badge-sachet").innerHTML = storageQuantity;
+                    document.getElementById("price").innerHTML = storageTotalPrice;
+                    document.getElementById("price-tablets").innerHTML = storageTotalPrice;
+                    document.getElementById("price-aerosoles").innerHTML = storageTotalPrice;
+                    document.getElementById("price-dif").innerHTML = storageTotalPrice;
+                    document.getElementById("price-res").innerHTML = storageTotalPrice;
+                    document.getElementById("price-sachet").innerHTML = storageTotalPrice;
+
+                    //fill out the resume table from the data of local storage
+                    resumenStorage = JSON.parse(localStorage.getItem("resumen"));
+                }
+                if (resumenStorage) {
+                    tbobyProducts = document.querySelector('#tb-resumen tbody');
+                    tbobyProducts.innerHTML = "";
+                    resumenStorage.map(function(Object) {
+                        var fila = document.createElement('tr');
+                        var celdaNameOfProduct = document.createElement('td');
+                        var celdaQuantityByProduct = document.createElement('td');
+                        var celdaPriceByProduct = document.createElement('td');
+
+                        var nodoNameProduct = document.createTextNode(Object.name);
+                        var nodoQuantityByProduct = document.createTextNode(Object.quantity);
+                        var nodoPriceByProduct = document.createTextNode(Object.price);
+
+                        $(celdaNameOfProduct).append(nodoNameProduct);
+                        $(fila).append(celdaNameOfProduct);
+
+                        $(celdaQuantityByProduct).append(nodoQuantityByProduct);
+                        $(fila).append(celdaQuantityByProduct);
+
+                        $(celdaPriceByProduct).append(nodoPriceByProduct);
+                        $(fila).append(celdaPriceByProduct);
+
+                        $(fila).append(celdaProducto);
+
+                        $(tbobyProducts).append(fila);
+                    });
+                }
+            }
+            getLocalStorage();
+        }, //success
         error: function(error) {
-            console.log('error: ', error);
+          console.log('error: ', error);
         }
     });
 }); //end of j-docready.
@@ -41,61 +92,13 @@ var globalQuantity = 0;
 var globalTotalMoney = 0;
 var globalSubTotal = 0;
 var globalImpuesto = 0;
-var dataLocalStorage = [];
 var storageQuantity;
 var storageTotalPrice;
 var resumeData = [];
-/**
- * [ get the local storage for display]
- */
-function getLocalStorage() {
-    //show the local storage in the inputs
-    if(storageQuantity){
-        storageQuantity = localStorage.getItem("QuantityProduct");
-        storageTotalPrice = localStorage.getItem("totalPrice");
-        document.getElementById("badge").innerHTML = storageQuantity;
-        document.getElementById("badge-tablets").innerHTML = storageQuantity;
-        document.getElementById("badge-aerosoles").innerHTML = storageQuantity;
-        document.getElementById("badge-dif").innerHTML = storageQuantity;
-        document.getElementById("badge-res").innerHTML = storageQuantity;
-        document.getElementById("badge-sachet").innerHTML = storageQuantity;
-        document.getElementById("price").innerHTML = storageTotalPrice;
-        document.getElementById("price-tablets").innerHTML = storageTotalPrice;
-        document.getElementById("price-aerosoles").innerHTML = storageTotalPrice;
-        document.getElementById("price-dif").innerHTML = storageTotalPrice;
-        document.getElementById("price-res").innerHTML = storageTotalPrice;
-        document.getElementById("price-sachet").innerHTML = storageTotalPrice;
-
-        //fill out the resume table from the data of local storage
-        var resumenStorage = JSON.parse(localStorage.getItem("resumen"));
-    }
-    if(resumenStorage){
-        tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
-        tbobyProducts.innerHTML = "";
-        resumenStorage.map(function(Object) {
-                var fila = document.createElement('tr');
-                var celdaNameOfProduct = document.createElement('td');
-                var celdaQuantityByProduct = document.createElement('td');
-                var celdaPriceByProduct = document.createElement('td');
-
-                var nodoNameProduct = document.createTextNode(Object.name);
-                var nodoQuantityByProduct = document.createTextNode(Object.quantity);
-                var nodoPriceByProduct = document.createTextNode(Object.price);
-
-                $(celdaNameOfProduct).append(nodoNameProduct);
-                $(fila).append(celdaNameOfProduct);
-
-                $(celdaQuantityByProduct).append(nodoQuantityByProduct);
-                $(fila).append(celdaQuantityByProduct);
-
-                $(celdaPriceByProduct).append(nodoPriceByProduct);
-                $(fila).append(celdaPriceByProduct);
-
-                $(tbobyProducts).append(fila);
-      });
-    }
+var dataLocalStorage = [];
+if(localStorage.getItem("InputsValues")){
+  dataLocalStorage = JSON.parse(localStorage.getItem("InputsValues"));
 }
-
 
 
 /**
@@ -124,10 +127,10 @@ function incrementInput(idField) {
  * @return {[none]}
  */
 function decrementInput(idField) {
-    var actualNumber = parseInt(document.getElementById(idField).value);
+  var actualNumber = parseInt(document.getElementById(idField).value);
     if (actualNumber > 0) {
-        var newValue = actualNumber - 1;
-        document.getElementById(idField).value = String(newValue);
+      var newValue = actualNumber - 1;
+      document.getElementById(idField).value = String(newValue);
     };
 }
 /**
@@ -153,8 +156,8 @@ function plusClick(inputId, aroma, producId, currentField, aromaId, aromaT, idAr
 
     productApi = JSON.parse(productData);
 
-  jQuery.ajax({
-        url: 'http://www.productosnano.com/index.php?route=api/cart/add',
+    jQuery.ajax({
+        url: 'https://www.productosnano.com/index.php?route=api/cart/add',
         type: 'POST',
         dataType: 'json',
         data: productApi,
@@ -202,14 +205,13 @@ function minusClick(inputId, currentField, productKey) {
     };
     productEdit = JSON.parse(productDataForEdit);
     jQuery.ajax({
-        url: 'http://www.productosnano.com/index.php?route=api/cart/edit',
+        url: 'https://www.productosnano.com/index.php?route=api/cart/edit',
         type: 'POST',
         dataType: 'json',
         data: productEdit,
         success: function(data) {
             getResume();
             var indexFound = productExist(currentField);
-            console.log(' UPDATE ', indexFound);
             if (indexFound == -1) {
                 dataLocalStorage.push(newDataProduct);
             } else {
@@ -234,17 +236,25 @@ function getResume() {
     var totalproducts = 0;
 
     jQuery.ajax({
-        url: 'http://www.productosnano.com/index.php?route=api/cart/products',
+        url: 'https://www.productosnano.com/index.php?route=api/cart/products',
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-            if(data !== null && data !== undefined &&  data !== NaN &&  data !== 0 &&  data !== ""  ){
+            if (data !== null && data !== undefined && data !== NaN && data !== 0 && data !== "") {
                 globalSubTotal = (data.totals[0].text);
                 globalImpuesto = (data.totals[1].text);
-
-               //if
-                globalTotalMoney = data.totals[2] ? (data.totals[2].text) : 0;
-                globalQuantity = globalTotalMoney ? globalTotalMoney : 0;
+                var i;
+                data.totals.find(function(total, index) {
+                    if (total.title == "Total:") {
+                        i = index;
+                        globalTotalMoney = total.text;
+                        return true;
+                    } else {
+                        globalTotalMoney = 0;
+                        i = undefined;
+                        return false;
+                    }
+                });
                 localStorage.setItem("totalPrice", globalTotalMoney);
                 document.getElementById("price").innerHTML = globalTotalMoney;
                 document.getElementById("price-tablets").innerHTML = globalTotalMoney;
@@ -253,31 +263,46 @@ function getResume() {
                 document.getElementById("price-dif").innerHTML = globalTotalMoney;
                 document.getElementById("price-res").innerHTML = globalTotalMoney;
 
+                tbobyMoney.innerHTML = "";
                 data.totals.map(function(total) {
-                  var fila = document.createElement('tr');
-                  var celdaDetalle = document.createElement('td');
-                  var celdaMonto = document.createElement('td');
+                    var fila = document.createElement('tr');
+                    var celdaDetalle = document.createElement('td');
+                    var celdaMonto = document.createElement('td');
 
-                  celdaMonto.setAttribute('id','monto-table');
+                    celdaMonto.setAttribute('id', 'monto-table');
 
-                  var nodoTxtDetalle = document.createTextNode(total.title);
-                  var nodoTxtMonto = document.createTextNode(total.text);
+                    var nodoTxtDetalle = document.createTextNode(total.title);
+                    var nodoTxtMonto = document.createTextNode(total.text);
 
-                  $(celdaDetalle).append(nodoTxtDetalle);
-                  $(fila).append(celdaDetalle);
+                    $(celdaDetalle).append(nodoTxtDetalle);
+                    $(fila).append(celdaDetalle);
 
-                  $(celdaMonto).append(nodoTxtMonto);
-                  $(fila).append(celdaMonto);
-                  $(tbobyMoney).append(fila);
-                });//map
+                    $(celdaMonto).append(nodoTxtMonto);
+                    $(fila).append(celdaMonto);
+                    $(tbobyMoney).append(fila);
+                }); //map
 
                 resumeData = [];
+                tbobyProducts.innerHTML = "";
+                console.log('adasdas' , data);
                 data.products.map(function(product) {
-                  var dataForLocalStorageResume ={
-                        name: product.name,
+                  var productName= product.name;
+                  product.option.map(function(option){
+                    if(option.name === "Aroma"){
+                      productName += " " + option.value;
+                    }
+                  })
+                  console.log('productName ' ,productName);
+
+                    var dataForLocalStorageResume = {
+                        name: productName,
                         price: product.price,
                         quantity: product.quantity
                     }
+                    //console.log('product' , product.option);"Aroma"
+                    //
+
+
                     resumeData.push(dataForLocalStorageResume);
                     localStorage.setItem("resumen", JSON.stringify(resumeData));
 
@@ -286,7 +311,7 @@ function getResume() {
                     var celdaQuantity = document.createElement('td');
                     var celdaPrice = document.createElement('td');
 
-                    var nodoTxtProduct = document.createTextNode(product.name);
+                    var nodoTxtProduct = document.createTextNode(productName);
                     var nodoTxtQuantity = document.createTextNode(product.quantity);
                     var nodoTxtPrice = document.createTextNode(product.price);
 
@@ -311,7 +336,7 @@ function getResume() {
                 document.getElementById("badge-dif").innerHTML = globalQuantity;
                 document.getElementById("badge-sachet").innerHTML = globalQuantity;
                 document.getElementById("badge-res").innerHTML = globalQuantity;
-            }//if
+            } //if
         },
         error: function(error) {
             console.log('error getting the info from the cart ', error);
@@ -321,20 +346,35 @@ function getResume() {
 /**
  * [compareData compare the api data  to the local storage for sync]
  */
+
 function compareData() {
-    $('#myModal').on('show.bs.modal', function(e) {
+    $('#myModal').on('shown.bs.modal', function(e) {
         var totalproducts = 0;
-        tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
-        tbobyMoney = document.querySelector('#tbl-resumen tbody');
-        tbobyProducts.innerHTML = "";
-        tbobyProducts.innerHTML = "";
-    jQuery.ajax({
-            url: 'http://www.productosnano.com/index.php?route=api/cart/products',
+        jQuery.ajax({
+            url: 'https://www.productosnano.com/index.php?route=api/cart/products',
             type: 'GET',
             dataType: 'json',
             success: function(data) {
+                tbobyProducts = document.querySelector('#tbl-resumen-products tbody');
+                tbobyMoney = document.querySelector('#tbl-resumen tbody');
+                var localTotal = 0;
+                console.log("asdasdas" , data);
                 if (data.products.length > 0) {
-                    if (data.totals[2].text == storageTotalPrice) {
+                    var n = 0;
+                    data.totals.find(function(total, index) {
+                        if (total.title == "Total:") {
+                            n = index;
+                            localTotal = total.text;
+                            return true;
+                        } else {
+                            n = undefined;
+                            localTotal = n;
+
+                            return false;
+                        }
+                    });
+
+                    if (localTotal != undefined && data.totals[n].text == storageTotalPrice) {
                         data.products.map(function(product) {
                             var fila = document.createElement('tr');
                             var celdaProduct = document.createElement('td');
@@ -371,7 +411,7 @@ function compareData() {
                             $(tbobyMoney).append(fila);
                         }); //map
                     } else {
-                        globalTotalMoney = data.totals[2].text;
+                        globalTotalMoney = data.totals[n].text;
                         document.getElementById("price").innerHTML = globalTotalMoney;
                         document.getElementById("price-tablets").innerHTML = globalTotalMoney;
                         document.getElementById("price-aerosoles").innerHTML = globalTotalMoney;
@@ -431,13 +471,13 @@ function compareData() {
                 }
             },
             error: function(error) {
-                    console.log('Error trayendo datos para comparar ', error);
-                } //error
-        })
-    })
+                console.log('Error getting the cart for compare', error);
+            } //error
+        });
+    });
 }
-getLocalStorage();
-compareData();
+//getLocalStorage();
+compareData();;
 
 /**
  * [this ones hide and show for the siguiente and atras buttons]
@@ -487,7 +527,6 @@ $("#down-next-difusores").click(function() {
     hideEverythingTwice();
     $("#divResumen").show();
 });
-
 
 $("#back-tabletas").click(function() {
     hideEverythingTwice();
